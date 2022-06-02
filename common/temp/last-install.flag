@@ -1,0 +1,8 @@
+{
+  "node": "16.15.1",
+  "packageManager": "pnpm",
+  "packageManagerVersion": "6.7.1",
+  "rushJsonFolder": "/Volumes/Tritium/work/monorepo-template",
+  "storePath": "/Volumes/Tritium/work/monorepo-template/common/temp/pnpm-store",
+  "workspaces": true
+}
