@@ -3,6 +3,7 @@ import { Link, useRoutes, useLocation } from 'solid-app-router';
 
 import { routes } from './routes';
 
+// TODO: create views, layouts and pages
 const App: Component = () => {
   const location = useLocation();
   const Route = useRoutes(routes);
