@@ -1,7 +1,8 @@
 {
   "name": "ui-system",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
+  "main": "index.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -17,6 +18,8 @@
     "vite-plugin-solid": "^2.2.6"
   },
   "dependencies": {
-    "solid-js": "^1.4.2"
+    "solid-js": "^1.4.2",
+    "ui-system": "workspace:*"
+
   }
 }
