@@ -1,13 +1,16 @@
 import type { JSX } from "solid-js";
 
-type BoxProps = {
-  children?: JSX.Element;
-  class?: string;
-};
+import styles from "./styles.module.css";
 
-export default ({ children, class: klass, ...rest }: BoxProps): JSX.Element => {
+import type { ContainerProps } from "./types";
+
+export default ({
+  children,
+  class: klass,
+  ...rest
+}: ContainerProps): JSX.Element => {
   return (
-    <div class={`flex ${klass}`} {...rest}>
+    <div class={`${styles.Box} ${klass}`} {...rest}>
       {children}
     </div>
   );

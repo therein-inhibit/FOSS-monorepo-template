@@ -1,0 +1,7 @@
+.Box {
+  @apply flex;
+}
+
+.Center {
+  @apply justify-center items-center;
+}

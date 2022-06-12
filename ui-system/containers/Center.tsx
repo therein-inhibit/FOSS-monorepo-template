@@ -1,18 +1,16 @@
 import type { JSX } from "solid-js";
-import Box from "./Box";
+import type { ContainerProps } from "./types";
 
-type CenterProps = {
-  children?: JSX.Element;
-  class?: string;
-};
+import { Box } from "ui-system";
+import styles from "./styles.module.css";
 
 export default function Center({
   children,
   class: klass,
   ...rest
-}: CenterProps): JSX.Element {
+}: ContainerProps): JSX.Element {
   return (
-    <Box class={`${klass} justify-center items-center`} {...rest}>
+    <Box class={`${styles.Center} ${klass}`} {...rest}>
       {children}
     </Box>
   );
