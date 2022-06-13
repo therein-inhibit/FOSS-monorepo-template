@@ -1,0 +1,38 @@
+{
+  "window.zoomLevel": -1,
+  "todohighlight.defaultStyle": {},
+  "todohighlight.keywords": [
+    {
+      "text": "DEBUG:",
+      "color": "#C8A4A0",
+      "isWholeLine": false,
+      "backgroundColor": "rgba(0,0,0,.2)"
+    },
+    {
+      "text": "REVIEW:",
+      "color": "#C8A4A0",
+      "isWholeLine": false,
+      "backgroundColor": "rgba(0,0,0,.2)"
+    },
+    {
+      "text": "NOTE:",
+      "color": "#C8A4A0",
+      "backgroundColor": "rgba(0,0,0,.2)",
+      "isWholeLine": false
+    },
+    {
+      "text": "HACK:",
+      "color": "#C8A4A0",
+      "backgroundColor": "rgba(0,0,0,.2)",
+      "isWholeLine": false
+    },
+    {
+      "text": "TODO:",
+      "color": "#C8A4A0",
+      "isWholeLine": false,
+      "backgroundColor": "rgba(0,0,0,.2)"
+    }
+  ],
+  "typescript.tsdk": "./common/temp/node_modules/.pnpm/typescript@4.7.3/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}

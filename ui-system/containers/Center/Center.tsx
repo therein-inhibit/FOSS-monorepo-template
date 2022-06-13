@@ -1,10 +1,11 @@
 import type { JSX } from "solid-js";
-import type { ContainerProps } from "./types";
+import type { ContainerProps } from "ui-system/containers/types";
 
 import { Box } from "ui-system";
-import styles from "./styles.module.css";
+import styles from "ui-system/containers/styles.module.css";
+// import styles from "ui-system/containers/styl"
 
-export default function Center({
+export function Center({
   children,
   class: klass,
   ...rest

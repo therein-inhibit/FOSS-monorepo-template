@@ -1,2 +1,2 @@
-export{ default as Box} from 'ui-system/containers/Box'
-export{ default as Center} from 'ui-system/containers/Center'
+export { default as Box } from "ui-system/containers/Box";
+export { Center } from "ui-system/containers/Center";
