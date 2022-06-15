@@ -3,3 +3,13 @@
 .pnpm-debug.log
 
 node_modules
+**/node_modules/**
+
+# rushjs
+**/.rush/temp/
+pnpm-store
+**/pnpm-store/**
+**/pnpm-local
+common/temp/last-install.flag
+common/temp/pnpmfileSettings.json
+common/temp/rush#*.lock
