@@ -1,3 +1,4 @@
 packages:
+  - ../../lib
   - ../../ui-system
   - ../../web

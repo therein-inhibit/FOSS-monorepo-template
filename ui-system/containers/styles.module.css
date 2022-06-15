@@ -5,3 +5,31 @@
 .Center {
   @apply justify-center items-center;
 }
+
+.AxisCenter {
+  @apply justify-center;
+}
+
+.CrossCenter {
+  @apply items-center;
+}
+
+.StackWrap {
+  @apply flex-wrap;
+}
+
+.HStackReverse {
+  @apply flex-row-reverse;
+}
+
+.HStack {
+  @apply flex-row;
+}
+
+.VStackReverse {
+  @apply flex-col-reverse;
+}
+
+.VStack {
+  @apply flex-col;
+}

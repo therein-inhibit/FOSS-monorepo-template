@@ -5,6 +5,9 @@ importers:
   .:
     specifiers: {}
 
+  ../../lib:
+    specifiers: {}
+
   ../../ui-system:
     specifiers:
       '@babel/core': ^7.18.5
@@ -30,6 +33,7 @@ importers:
       '@storybook/testing-library': ^0.0.13
       autoprefixer: ^10.4.7
       babel-loader: ^8.2.5
+      lib: workspace:*
       postcss: ^8.4.14
       react: 18.1.0
       react-dom: 18.1.0
@@ -41,6 +45,7 @@ importers:
       vite: ^2.9.12
       vite-plugin-solid: ^2.2.6
     dependencies:
+      lib: link:../lib
       solid-js: 1.4.4
       ui-system: 'link:'
     devDependencies:
