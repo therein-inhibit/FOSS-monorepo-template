@@ -3,3 +3,7 @@
 .pnpm-debug.log
 
 node_modules
+**/node_modules/**
+**/.rush/temp/
+pnpm-store
+**/pnpm-store/**
