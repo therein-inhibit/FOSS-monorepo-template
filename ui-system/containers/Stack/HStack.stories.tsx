@@ -83,7 +83,7 @@ export const Default = ({ wrap, reverse, ...rest }: StackProps) => {
 
 Default.args = {
   overflow: "overflow-scroll",
-  class: "p-1.5",
+  class: "p-4",
 };
 
 Default.parameters = {
