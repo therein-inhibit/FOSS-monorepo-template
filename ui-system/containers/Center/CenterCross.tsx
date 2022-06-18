@@ -4,7 +4,7 @@ import type { ContainerProps } from "ui-system/containers/types";
 import { Box } from "ui-system";
 import styles from "ui-system/containers/styles.module.css";
 
-export function CrossCenter({
+export function CenterCross({
   children,
   class: klass,
   ...rest

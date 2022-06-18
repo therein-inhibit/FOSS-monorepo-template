@@ -1,8 +1,8 @@
 import { Meta } from "@storybook/html";
-import { Box, CenterAxis } from "ui-system";
+import { Box, CenterCross } from "ui-system";
 
 export default {
-  title: "ui-system/containers/CenterAxis",
+  title: "ui-system/containers/CenterCross",
   name: "CenterAxis",
 
   argTypes: {
@@ -25,20 +25,20 @@ export default {
       },
       description: {
         component: `
-### It centers its children along the main axis
-- it is only a Box with ${"`justify-content: center;`"}
-- if ${"`flex-direction : row;`"} it will center horizontaly
-- if ${"`flex-direction : column;`"} it will center verticaly
+### It centers its children along the cross axis
+- it is only a Box with ${"`align-items: center;`"}
+- if ${"`flex-direction : row;`"} it will center vertically
+- if ${"`flex-direction : column;`"} it will center horizontally
         `,
       },
     },
   },
 } as Meta;
 
-export const Container = ({ column = false }) => {
+export const Container = ({ column }) => {
   return (
-    <CenterAxis class={`h-96 w-96 bg-green-200 ${column}`}>
+    <CenterCross class={`h-96 w-96 bg-green-200 ${column}`}>
       <Box class="h-28 w-28 bg-yellow-200"></Box>
-    </CenterAxis>
+    </CenterCross>
   );
 };

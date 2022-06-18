@@ -15,7 +15,14 @@ export const parameters = {
       // NOTE: why this array has to be defined within the sort function is a guess.
       // but defining it on the parent scope doesnt work
 
-      let storiesOrder = ["Box", "CenterAxis", "Center", "HStack", "VStack"];
+      let storiesOrder = [
+        "Box",
+        "CenterAxis",
+        "CenterCross",
+        "Center",
+        "HStack",
+        "VStack",
+      ];
 
       let titleA = a.title.split("/").pop();
       let titleB = b.title.split("/").pop();

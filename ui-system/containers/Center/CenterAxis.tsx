@@ -4,7 +4,7 @@ import type { ContainerProps } from "ui-system/containers/types";
 import { Box } from "ui-system";
 import styles from "ui-system/containers/styles.module.css";
 
-export function AxisCenter({
+export function CenterAxis({
   children,
   class: klass,
   ...rest

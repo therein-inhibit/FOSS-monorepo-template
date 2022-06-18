@@ -3,7 +3,6 @@ import type { ContainerProps } from "ui-system/containers/types";
 
 import { Box } from "ui-system";
 import styles from "ui-system/containers/styles.module.css";
-// import styles from "ui-system/containers/styl"
 
 export function Center({
   children,

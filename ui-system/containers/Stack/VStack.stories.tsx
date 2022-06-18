@@ -58,6 +58,8 @@ export default {
       description: {
         component: `
   ### It stacks its children vertically
+  - by default its contents overflow
+
           `,
       },
     },
@@ -66,7 +68,7 @@ export default {
 
 // let [storyClass, setStoryClass] = createSignal("");
 
-export const Default = ({ wrap, reverse, ...rest }: StackProps) => {
+export const Container = ({ wrap, reverse, ...rest }: StackProps) => {
   let list = [...Array(50).keys()];
 
   return (
@@ -82,25 +84,22 @@ export const Default = ({ wrap, reverse, ...rest }: StackProps) => {
   );
 };
 
-Default.args = {
+Container.args = {
   overflow: "overflow-scroll",
   stackClass: "gap-1 h-36 w-96 bg-green-200 shadow-2xl p-4",
   itemsClass: "h-8 w-8 bg-yellow-200",
 };
 
-Default.parameters = {
+Container.parameters = {
   viewMode: "docs",
   docs: {
     source: {
       code: `
 let list = [...Array(50).keys()];
 
-let stackClass = "gap-1 h-36 w-96 bg-green-200 shadow-2xl";
-let itemClass = "h-8 w-8 bg-yellow-200"
-
-<VStack wrap={true} reverse={false} class={stackClass}>
+<VStack wrap={true} reverse={false}>
   <Index each={list}>
-    {(_, i) => <Center class={itemClass}>{i + 1}</Center>}
+    {(_, i) => <Center>{i + 1}</Center>}
   </Index>
 </VStack>
 `,
