@@ -1,17 +1,21 @@
 import type { JSX } from "solid-js";
-import type { ContainerProps } from "ui-system/containers/types";
+import type { ContainerProps, StackProps } from "ui-system/containers/types";
 
 import { Box } from "ui-system";
 import styles from "ui-system/containers/styles.module.css";
-// import styles from "ui-system/containers/styl"
 
 export function VStack({
   children,
   class: klass,
+  wrap = true,
+  reverse = false,
   ...rest
-}: ContainerProps): JSX.Element {
+}: ContainerProps & StackProps): JSX.Element {
+  let wrapStyle = wrap ? styles.StackWrap : "";
+  let reverStyle = reverse ? styles.VStackReverse : styles.VStack;
+
   return (
-    <Box class={`${styles.VStack} ${klass}`} {...rest}>
+    <Box class={`${wrapStyle} ${reverStyle} ${klass}`} {...rest}>
       {children}
     </Box>
   );

@@ -1,10 +1,10 @@
 import { Meta } from "@storybook/html";
 import { Index } from "solid-js";
-import { HStack, Center } from "ui-system";
+import { VStack, Center } from "ui-system";
 import { StackProps } from "ui-system/containers/types";
 
 export default {
-  title: "containers/HStack",
+  title: "containers/VStack",
   argTypes: {
     stackClass: {
       control: "text",
@@ -34,7 +34,7 @@ export default {
     reverse: {
       control: "boolean",
       defaultValue: false,
-      description: "If HStack should reverse or not",
+      description: "If VStack should reverse or not",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: false },
@@ -43,7 +43,7 @@ export default {
     wrap: {
       defaultValue: true,
       control: "boolean",
-      description: "If HStack should wrap or not",
+      description: "If VStack should wrap or not",
       table: {
         type: { summary: "boolean" },
         defaultValue: { summary: true },
@@ -56,7 +56,7 @@ export default {
     docs: {
       description: {
         component: `
-  ### It stacks its children horintally
+  ### It stacks its children vertically
           `,
       },
     },
@@ -69,7 +69,7 @@ export const Default = ({ wrap, reverse, ...rest }: StackProps) => {
   let list = [...Array(50).keys()];
 
   return (
-    <HStack
+    <VStack
       wrap={wrap}
       reverse={reverse}
       class={` ${rest.overflow} ${rest.stackClass}`}
@@ -77,7 +77,7 @@ export const Default = ({ wrap, reverse, ...rest }: StackProps) => {
       <Index each={list}>
         {(_, i) => <Center class={rest.itemsClass as string}>{i + 1}</Center>}
       </Index>
-    </HStack>
+    </VStack>
   );
 };
 
@@ -97,11 +97,11 @@ let list = [...Array(50).keys()];
 let stackClass = "gap-1 h-36 w-96 bg-green-200 shadow-2xl";
 let itemClass = "h-8 w-8 bg-yellow-200"
 
-<HStack wrap={true} reverse={false} class={stackClass}>
+<VStack wrap={true} reverse={false} class={stackClass}>
   <Index each={list}>
     {(_, i) => <Center class={itemClass}>{i + 1}</Center>}
   </Index>
-</HStack>
+</VStack>
 `,
     },
   },
