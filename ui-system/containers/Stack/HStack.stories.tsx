@@ -1,12 +1,19 @@
 import { Meta } from "@storybook/html";
-import { createSignal, Index } from "solid-js";
-import { Box, HStack, Center } from "ui-system";
+import { Index } from "solid-js";
+import { HStack, Center } from "ui-system";
 import { StackProps } from "ui-system/containers/types";
 
 export default {
   title: "containers/HStack",
   argTypes: {
-    class: {
+    stackClass: {
+      control: "text",
+      description: "tailwind class",
+      table: {
+        type: { summary: "string" },
+      },
+    },
+    itemsClass: {
       control: "text",
       description: "tailwind class",
       table: {
@@ -61,21 +68,14 @@ export default {
 export const Default = ({ wrap, reverse, ...rest }: StackProps) => {
   let list = [...Array(50).keys()];
 
-  // setStoryClass(rest.class);
-
-  let stackClass = "gap-1 h-36 w-96 bg-green-200 shadow-2xl";
-  let itemClass = "h-8 w-8 bg-yellow-200";
-
-  console.log("+++", rest);
-
   return (
     <HStack
       wrap={wrap}
       reverse={reverse}
-      class={`${stackClass} ${rest.overflow} ${rest.class}`}
+      class={` ${rest.overflow} ${rest.stackClass}`}
     >
       <Index each={list}>
-        {(_, i) => <Center class={itemClass}>{i + 1}</Center>}
+        {(_, i) => <Center class={rest.itemsClass as string}>{i + 1}</Center>}
       </Index>
     </HStack>
   );
@@ -83,16 +83,12 @@ export const Default = ({ wrap, reverse, ...rest }: StackProps) => {
 
 Default.args = {
   overflow: "overflow-scroll",
-  class: "p-4",
+  stackClass: "gap-1 h-36 w-96 bg-green-200 shadow-2xl p-4",
+  itemsClass: "h-8 w-8 bg-yellow-200",
 };
 
 Default.parameters = {
   viewMode: "docs",
-  //   description: {
-  //     component: `
-  // ### It stacks its children vertically 222
-  //       `,
-  //   },
   docs: {
     source: {
       code: `
