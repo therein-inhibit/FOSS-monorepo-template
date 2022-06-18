@@ -2,7 +2,8 @@ import { Story, Meta } from "@storybook/html";
 import { Box, Center } from "ui-system";
 
 export default {
-  title: "containers/Box",
+  title: "ui-system/containers/Box",
+  name: "Box",
   parameters: {
     viewMode: "docs",
     docs: {

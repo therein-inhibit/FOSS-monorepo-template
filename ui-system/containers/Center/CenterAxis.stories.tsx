@@ -2,8 +2,9 @@ import { Meta } from "@storybook/html";
 import { Box, Center } from "ui-system";
 
 export default {
-  title: "ui-system/containers/Center",
-  name: "Center",
+  title: "ui-system/containers/CenterAxis",
+  name: "CenterAxis",
+
   parameters: {
     viewMode: "docs",
     docs: {

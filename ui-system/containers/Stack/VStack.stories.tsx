@@ -4,7 +4,8 @@ import { VStack, Center } from "ui-system";
 import { StackProps } from "ui-system/containers/types";
 
 export default {
-  title: "containers/VStack",
+  title: "ui-system/containers/VStack",
+  name: "VStack",
   argTypes: {
     stackClass: {
       control: "text",

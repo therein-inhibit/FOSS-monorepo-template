@@ -4,7 +4,9 @@ import { HStack, Center } from "ui-system";
 import { StackProps } from "ui-system/containers/types";
 
 export default {
-  title: "containers/HStack",
+  title: "ui-system/containers/HStack",
+  name: "HStack",
+
   argTypes: {
     stackClass: {
       control: "text",
@@ -56,7 +58,7 @@ export default {
     docs: {
       description: {
         component: `
-  ### It stacks its children horintally
+  ### It stacks its children horizontally
           `,
       },
     },

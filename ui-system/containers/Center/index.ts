@@ -1,3 +1,3 @@
 export * from "./Center";
-export * from "./AxisCenter";
-export * from "./CrossCenter";
+export * from "./CenterAxis";
+export * from "./CenterCross";

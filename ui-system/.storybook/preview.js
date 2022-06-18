@@ -1,5 +1,33 @@
+import "../src/index.css";
+import { render } from "solid-js/web";
+
+// console.log(storiesOrder);
 export const parameters = {
   viewMode: "docs",
+  options: {
+    // storySort: (a, b) => {
+    //   console.log(a, b);
+    //   return a[1].kind === b[1].kind
+    //     ? 0
+    //     : a[1].id.localeCompare(b[1].id, undefined, { numeric: true });
+    // },
+    storySort: (a, b) => {
+      // NOTE: why this array has to be defined within the sort function is a guess.
+      // but defining it on the parent scope doesnt work
+
+      let storiesOrder = ["Box", "CenterAxis", "Center", "HStack", "VStack"];
+
+      let titleA = a.title.split("/").pop();
+      let titleB = b.title.split("/").pop();
+      // return 0;
+      return storiesOrder.indexOf(titleA) - storiesOrder.indexOf(titleB);
+    },
+    // storySort: {
+    //   // includeName: true,
+    //   // method: "alphabetical",
+    //   order: storiesOrder,
+    // },
+  },
 
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -9,10 +37,6 @@ export const parameters = {
     },
   },
 };
-
-import "../src/index.css";
-
-import { render } from "solid-js/web";
 
 let solidIds = new Map();
 
@@ -58,6 +82,7 @@ let loopTimeout = 500;
           solidIds.delete(id);
         }
       }
+
       disposeOldSolidComponents();
     }, loopTimeout);
   };
