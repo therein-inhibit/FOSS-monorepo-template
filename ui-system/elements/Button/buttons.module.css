@@ -1,0 +1,24 @@
+.RaisedButton {
+  @apply rounded-md app-light-raised;
+  /* this margin of 1px is need because the
+    flat button has a border of 1px */
+  @apply m-[1px];
+}
+
+.ShallowButton {
+  @apply rounded-md app-light-shallow;
+  @apply m-[1px];
+}
+
+.FlatButton {
+  @apply rounded-md;
+  @apply border border-zinc-300;
+}
+
+.FlattenButton {
+  @apply rounded-md;
+  @apply border border-zinc-400 hover:bg-app-white-300;
+  /* animation */
+  transition: background 0.8s;
+  @apply active:bg-app-white-400 active:transition-none;
+}

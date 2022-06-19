@@ -6,7 +6,7 @@ import styles from "ui-system/containers/styles.module.css";
 
 export function CenterCross({
   children,
-  class: klass,
+  class: klass = "",
   ...rest
 }: ContainerProps): JSX.Element {
   return (

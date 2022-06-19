@@ -6,7 +6,7 @@ import styles from "ui-system/containers/styles.module.css";
 
 export function VStack({
   children,
-  class: klass,
+  class: klass = "",
   wrap = true,
   reverse = false,
   ...rest
