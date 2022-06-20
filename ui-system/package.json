@@ -17,6 +17,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "postcss-import": "^14.1.0",
     "typescript-plugin-css-modules": "^3.4.0",
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
