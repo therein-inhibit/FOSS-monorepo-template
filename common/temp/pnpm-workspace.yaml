@@ -1,4 +1,5 @@
 packages:
   - ../../lib
+  - ../../styles
   - ../../ui-system
   - ../../web

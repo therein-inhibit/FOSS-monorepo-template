@@ -13,7 +13,8 @@
   "dependencies": {
     "solid-js": "^1.4.4",
     "ui-system": "workspace:*",
-    "lib": "workspace:*"
+    "lib": "workspace:*",
+    "styles": "workspace:*"
   },
   "license": "MIT",
   "devDependencies": {

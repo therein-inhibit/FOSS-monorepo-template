@@ -402,6 +402,10 @@
     {
       "packageName": "lib",
       "projectFolder": "lib"
+    },
+    {
+      "packageName": "styles",
+      "projectFolder": "styles"
     }
     // {
     //   /**
