@@ -37,7 +37,8 @@ export function Button({
 
   return (
     <button
-      class={`${style()} ${klass} h-fit w-fit p-3`}
+      type="button"
+      class={`${style()} ${klass}`}
       onMouseEnter={(evt) => {
         if (pressedDown()) {
           setFlat(true);

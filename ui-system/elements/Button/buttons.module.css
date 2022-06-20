@@ -1,24 +1,30 @@
+.BaseButton {
+  @apply flex rounded-md;
+  @apply h-fit w-fit p-3;
+  @apply bg-app-gray-003;
+}
+
 .RaisedButton {
-  @apply rounded-md app-light-raised;
-  /* this margin of 1px is need because the
-    flat button has a border of 1px */
-  @apply m-[1px];
+  @apply BaseButton m-[1px];
+  @apply app-light-raised;
 }
 
 .ShallowButton {
-  @apply rounded-md app-light-shallow;
-  @apply m-[1px];
+  @apply BaseButton m-[1px];
+  @apply app-light-shallow;
 }
 
 .FlatButton {
-  @apply rounded-md;
-  @apply border border-zinc-300;
+  @apply BaseButton;
+  @apply border border-app-gray-006;
 }
 
 .FlattenButton {
-  @apply rounded-md;
-  @apply border border-zinc-400 hover:bg-app-white-300;
+  @apply BaseButton;
+  @apply border border-app-gray-010;
+  @apply hover:bg-app-gray-005;
+
   /* animation */
-  transition: background 0.8s;
-  @apply active:bg-app-white-400 active:transition-none;
+  transition: background 1s;
+  @apply active:bg-app-gray-007 active:transition-none;
 }

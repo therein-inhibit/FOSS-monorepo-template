@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --app-gray-000: #ffffff;
+  --app-gray-001: #f8f8f8;
+  --app-gray-002: #f0f0f0;
+  --app-gray-003: #e8e8e8;
+  --app-gray-004: #e0e0e0;
+  --app-gray-005: #d8d8d8;
+  --app-gray-006: #d0d0d0;
+  --app-gray-007: #c8c8c8;
+  --app-gray-008: #c0c0c0;
+  --app-gray-009: #b8b8b8;
+  --app-gray-010: #b0b0b0;
+  --app-gray-011: #a8a8a8;
+  --app-gray-012: #a0a0a0;
+  --app-gray-013: #989898;
+  --app-gray-014: #909090;
+  --app-gray-015: #888888;
+  --app-gray-016: #808080;
+  --app-gray-017: #787878;
+  --app-gray-018: #707070;
+  --app-gray-019: #686868;
+  --app-gray-020: #606060;
+  --app-gray-021: #585858;
+  --app-gray-022: #505050;
+  --app-gray-023: #484848;
+  --app-gray-024: #404040;
+  --app-gray-025: #383838;
+  --app-gray-026: #303030;
+  --app-gray-027: #282828;
+  --app-gray-028: #202020;
+  --app-gray-029: #181818;
+  --app-gray-030: #101010;
+  --app-gray-031: #080808;
+  --app-gray-032: #000000;
+}
+
+@layer utilities {
+  .app-light-shallow {
+    background: linear-gradient(
+      145deg,
+      var(--app-gray-005),
+      var(--app-gray-000)
+    );
+    box-shadow: -8px -8px 16px var(--app-gray-007),
+      8px 8px 16px var(--app-gray-000), 8px 8px 16px var(--app-gray-000);
+  }
+
+  .app-light-raised {
+    @apply bg-app-gray-003;
+    box-shadow: 8px 8px 16px var(--app-gray-007),
+      -8px -8px 16px var(--app-gray-000);
+  }
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}

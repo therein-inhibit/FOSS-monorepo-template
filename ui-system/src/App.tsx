@@ -4,29 +4,29 @@ import { Box, Button, Center, VStack, FlatButton } from "ui-system";
 // TODO: create containers, elements, components and widget
 const App: Component = () => {
   return (
-    <Center class="h-screen w-screen bg-app-light text-slate-600">
-      <VStack class="gap-28">
+    <Center class="h-screen w-screen bg-app-gray-003 text-slate-600">
+      <VStack class="gap-28 items-center">
         <Button
           onClick={(evt) => {
-            console.log("raised btn clicked", evt);
+            // console.log("raised btn clicked", evt);
           }}
         >
-          hello
+          raised
         </Button>
         <Button
           variante="shallow"
           onClick={(evt) => {
-            console.log("shallow btn clicked", evt);
+            // console.log("shallow btn clicked", evt);
           }}
         >
-          hello
+          shallow
         </Button>
         <FlatButton
           onClick={(evt) => {
-            console.log("flat btn clicked", evt);
+            // console.log("flat btn clicked", evt);
           }}
         >
-          hello
+          flat
         </FlatButton>
       </VStack>
     </Center>

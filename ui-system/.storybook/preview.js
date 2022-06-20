@@ -1,4 +1,4 @@
-import "../src/index.css";
+import "../index.css";
 import { render } from "solid-js/web";
 
 // console.log(storiesOrder);
