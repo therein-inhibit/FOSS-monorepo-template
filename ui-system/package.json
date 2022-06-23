@@ -14,7 +14,8 @@
     "solid-js": "^1.4.4",
     "ui-system": "workspace:*",
     "lib": "workspace:*",
-    "styles": "workspace:*"
+    "styles": "workspace:*",
+    "@iconify/json": "~2.1.65"
   },
   "license": "MIT",
   "devDependencies": {

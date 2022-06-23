@@ -15,6 +15,7 @@ importers:
     specifiers:
       '@babel/core': ^7.18.5
       '@babel/preset-env': ^7.18.2
+      '@iconify/json': ~2.1.65
       '@mdx-js/react': 2.1.1
       '@storybook/addon-actions': ^6.5.9
       '@storybook/addon-backgrounds': ^6.5.9
@@ -50,6 +51,7 @@ importers:
       vite: ^2.9.12
       vite-plugin-solid: ^2.2.6
     dependencies:
+      '@iconify/json': 2.1.65
       lib: link:../lib
       solid-js: 1.4.4
       styles: link:../styles
@@ -1668,6 +1670,17 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
+
+  /@iconify/json/2.1.65:
+    resolution: {integrity: sha512-i7Qbccv5h1hdp1H779hDif6WmY5qNHwiEGVLY2crWSK05B9dFPh0xH4Q8i77YuSCY9rP25AXDKNZVzPUEuSqJA==}
+    dependencies:
+      '@iconify/types': 1.1.0
+      pathe: 0.2.0
+    dev: false
+
+  /@iconify/types/1.1.0:
+    resolution: {integrity: sha512-Jh0llaK2LRXQoYsorIH8maClebsnzTcve+7U3rQUSnC11X4jtPnFuyatqFLvMxZ8MLG8dB4zfHsbPfuvxluONw==}
+    dev: false
 
   /@istanbuljs/load-nyc-config/1.1.0:
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
@@ -9434,6 +9447,10 @@ packages:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==}
     engines: {node: '>=8'}
     dev: true
+
+  /pathe/0.2.0:
+    resolution: {integrity: sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw==}
+    dev: false
 
   /pbkdf2/3.1.2:
     resolution: {integrity: sha512-iuh7L6jA7JEGu2WxDwtQP1ddOpaJNC4KlDEFfdQajSGgGPNi4OyDc2R7QnbY2bR9QjBVGwgvTdNJZoE7RaxUMA==}
