@@ -37,11 +37,23 @@
   @apply rounded-full;
   @apply h-16 w-16;
   @apply bg-app-gray-e8;
+  @apply fixed;
 }
 
 .CircleButtonRaised {
   @apply BaseCircleButton;
   @apply app-light-raised;
+  transition: all 0.2s linear;
+}
+
+.CircleButtonAnimationSlow {
+  @apply CircleButtonRaised;
+  animation: waves 4s linear infinite;
+}
+
+.CircleButtonAnimationFast {
+  @apply CircleButtonRaised;
+  animation: waves 2s linear infinite;
 }
 
 .CircleButtonShallow {

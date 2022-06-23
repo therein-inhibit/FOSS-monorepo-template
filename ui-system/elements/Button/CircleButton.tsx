@@ -1,6 +1,8 @@
 import type { JSX } from "solid-js";
 import { createSignal, onCleanup } from "solid-js";
 
+import { Center } from "ui-system";
+
 import styles from "ui-system/elements/Button/buttons.module.css";
 
 type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement>;
@@ -36,45 +38,49 @@ export function CircleButton({
   });
 
   return (
-    <button
-      type="button"
-      class={`${style()} ${klass}`}
-      onMouseEnter={(evt) => {
-        if (pressedDown()) {
+    <Center>
+      <span class={styles.CircleButtonAnimationSlow}></span>
+      <span class={styles.CircleButtonAnimationFast}></span>
+      <button
+        type="button"
+        class={`${style()} ${klass}`}
+        onMouseEnter={(evt) => {
+          if (pressedDown()) {
+            setFlat(true);
+          }
+
+          if (typeof onMouseEnter === "function") {
+            onMouseEnter(evt);
+          }
+        }}
+        onMouseDown={(evt) => {
           setFlat(true);
-        }
+          setPressedDown(true);
 
-        if (typeof onMouseEnter === "function") {
-          onMouseEnter(evt);
-        }
-      }}
-      onMouseDown={(evt) => {
-        setFlat(true);
-        setPressedDown(true);
+          if (typeof onMouseDown === "function") {
+            onMouseDown(evt);
+          }
+        }}
+        onMouseOut={(evt) => {
+          setFlat(false);
 
-        if (typeof onMouseDown === "function") {
-          onMouseDown(evt);
-        }
-      }}
-      onMouseOut={(evt) => {
-        setFlat(false);
+          if (typeof onMouseOut === "function") {
+            onMouseOut(evt);
+          }
+        }}
+        onClick={(evt) => {
+          setRaised((v) => !v);
+          setFlat(false);
+          setPressedDown(false);
 
-        if (typeof onMouseOut === "function") {
-          onMouseOut(evt);
-        }
-      }}
-      onClick={(evt) => {
-        setRaised((v) => !v);
-        setFlat(false);
-        setPressedDown(false);
-
-        if (typeof onClick === "function") {
-          onClick(evt);
-        }
-      }}
-      {...rest}
-    >
-      {children}
-    </button>
+          if (typeof onClick === "function") {
+            onClick(evt);
+          }
+        }}
+        {...rest}
+      >
+        {children}
+      </button>
+    </Center>
   );
 }
