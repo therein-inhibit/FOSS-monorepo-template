@@ -1,7 +1,7 @@
 .BaseButton {
   @apply flex rounded-md;
   @apply h-fit w-fit p-3;
-  @apply bg-app-gray-003;
+  @apply bg-app-gray-e8;
 }
 
 .RaisedButton {
@@ -12,19 +12,23 @@
 .ShallowButton {
   @apply BaseButton m-[1px];
   @apply app-light-shallow;
+  /* border-radius: 50px; */
+  /* background: #e8e8e8; */
+  /* box-shadow: inset 3px 3px 17px var(--app-gray-c5),
+    inset -3px -3px 17px var(--app-gray-ff); */
 }
 
 .FlatButton {
   @apply BaseButton;
-  @apply border border-app-gray-006;
+  @apply border border-app-gray-df;
 }
 
 .FlattenButton {
   @apply BaseButton;
-  @apply border border-app-gray-010;
-  @apply hover:bg-app-gray-005;
+  @apply border border-app-gray-d0;
+  @apply hover:bg-app-gray-c5;
 
   /* animation */
   transition: background 1s;
-  @apply active:bg-app-gray-007 active:transition-none;
+  @apply active:bg-app-gray-c0 active:transition-none;
 }

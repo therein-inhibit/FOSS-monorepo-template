@@ -6,19 +6,14 @@
 
 @layer utilities {
   .app-light-shallow {
-    background: linear-gradient(
-      145deg,
-      var(--app-gray-005),
-      var(--app-gray-000)
-    );
-    box-shadow: -8px -8px 16px var(--app-gray-007),
-      8px 8px 16px var(--app-gray-000), 8px 8px 16px var(--app-gray-000);
+    @apply bg-app-gray-e8;
+    box-shadow: inset 5px 5px 9px var(--app-gray-c5),
+      inset -5px -5px 9px var(--app-gray-ff);
   }
 
   .app-light-raised {
-    @apply bg-app-gray-003;
-    box-shadow: 8px 8px 16px var(--app-gray-007),
-      -8px -8px 16px var(--app-gray-000);
+    @apply bg-app-gray-e8;
+    box-shadow: 5px 5px 9px var(--app-gray-c5), -5px -5px 9px var(--app-gray-ff);
   }
 }
 

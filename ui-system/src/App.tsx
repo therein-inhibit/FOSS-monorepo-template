@@ -4,7 +4,7 @@ import { Box, Button, Center, VStack, FlatButton } from "ui-system";
 // TODO: create containers, elements, components and widget
 const App: Component = () => {
   return (
-    <Center class="h-screen w-screen bg-app-gray-003 text-slate-600">
+    <Center class="h-screen w-screen bg-app-gray-e8 text-slate-600">
       <VStack class="gap-28 items-center">
         <Button
           onClick={(evt) => {
@@ -35,3 +35,28 @@ const App: Component = () => {
 };
 
 export default App;
+
+// let alpha = "0123456789abcdef".split("");
+
+// let cache = [];
+
+// let counter = 0;
+// for (let i of alpha) {
+//   for (let j of alpha) {
+//     let counterStr = String(counter);
+//     if (counter < 10) {
+//       counterStr = `00${counter}`;
+//     } else if (counter >= 10 && counter < 100) {
+//       counterStr = `0${counter}`;
+//     }
+
+//     counter++;
+
+//     let code = `${i}${j}`;
+//     code = `--app-gray-${code}: #${code}${code}${code}`;
+//     // console.log(code);
+//     cache.push(code);
+//   }
+// }
+
+// console.log(cache.join(";\n"));
