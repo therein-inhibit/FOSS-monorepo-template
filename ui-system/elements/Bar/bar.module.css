@@ -1,0 +1,4 @@
+.BarRaised {
+  @apply app-light-raised;
+  @apply min-h-[32px] min-w-[64px];
+}

@@ -25,7 +25,7 @@
 
 .FlattenButton {
   @apply BaseButton;
-  @apply border border-app-gray-d0;
+  @apply border;
   @apply hover:bg-app-gray-d7;
 
   /* animation */
