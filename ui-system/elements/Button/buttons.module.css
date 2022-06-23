@@ -1,6 +1,6 @@
 .BaseButton {
   @apply flex rounded-md;
-  @apply h-fit w-fit p-3;
+  @apply h-fit w-fit;
   @apply bg-app-gray-e8;
 }
 
