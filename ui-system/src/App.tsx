@@ -1,5 +1,12 @@
 import type { Component } from "solid-js";
-import { Box, Button, Center, VStack, FlatButton } from "ui-system";
+import {
+  Box,
+  Button,
+  Center,
+  VStack,
+  FlatButton,
+  CircleButton,
+} from "ui-system";
 
 // TODO: create containers, elements, components and widget
 const App: Component = () => {
@@ -28,6 +35,15 @@ const App: Component = () => {
         >
           flat
         </FlatButton>
+        <CircleButton> A</CircleButton>
+        {/* <div class="circle">
+          <span class="circle__btn">
+            <span>Pause</span>
+            <span>Play</span>
+          </span>
+          <span class="circle__back-1"></span>
+          <span class="circle__back-2"></span>
+        </div> */}
       </VStack>
     </Center>
     // <p class="text-4xl text-green-700 text-center py-20"></p>

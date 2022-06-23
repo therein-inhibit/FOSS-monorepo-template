@@ -20,15 +20,50 @@
 
 .FlatButton {
   @apply BaseButton;
-  @apply border border-app-gray-df;
+  @apply border border-app-gray-d0;
 }
 
 .FlattenButton {
   @apply BaseButton;
   @apply border border-app-gray-d0;
-  @apply hover:bg-app-gray-c5;
+  @apply hover:bg-app-gray-d7;
 
   /* animation */
   transition: background 1s;
-  @apply active:bg-app-gray-c0 active:transition-none;
+  @apply active:bg-app-gray-c5 active:transition-none;
+}
+
+.BaseCircleButton {
+  @apply rounded-full;
+  @apply h-16 w-16;
+  @apply bg-app-gray-e8;
+}
+
+.CircleButtonRaised {
+  @apply BaseCircleButton;
+  @apply app-light-raised;
+}
+
+.CircleButtonShallow {
+  @apply BaseCircleButton;
+  @apply app-light-shallow;
+}
+
+.CircleButtonFlat {
+  @apply BaseCircleButton;
+  @apply border border-app-gray-d0;
+}
+
+@keyframes waves {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
 }
