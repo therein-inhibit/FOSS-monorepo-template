@@ -11,7 +11,11 @@ export function Loader({ children, class: klass = "", ...rest }: LoaderProps) {
   return (
     <Center class={`${styles.Card} h-[22rem] w-[22rem]`}>
       <VStack class="">
-        <Center class="mt-[7rem]">
+        <Center class="mt-[8rem]">
+          {/* <div class={`${styles.Ring1}`}></div>
+          <div class={`${styles.Ring2}`}></div>
+          <div class={`${styles.Ring3}`}></div>
+          <div class={`${styles.Ring4}`}></div> */}
           <span class={styles.CircleButtonAnimationSlow}></span>
           <span class={styles.CircleButtonAnimationNormal}></span>
           {/* <span class={styles.CircleButtonAnimationFast}></span> */}
@@ -23,9 +27,9 @@ export function Loader({ children, class: klass = "", ...rest }: LoaderProps) {
         {/* <span
         class={`h-8 w-8 fixed z-10 rounded-full ${styles.OscilateSlow} `}
       ></span> */}
-        <Box class="h-[7rem]"></Box>
+        <Box class="h-[8rem]"></Box>
         {/* TODO: make text bold */}
-        <Box class={`${klass} mb-auto text-center z-50 `} {...rest}>
+        <Box class={`${klass} ${styles.Bounce} mb-auto text-center`} {...rest}>
           LOADING...
         </Box>
       </VStack>

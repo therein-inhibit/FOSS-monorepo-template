@@ -1,9 +1,16 @@
-@keyframes oscilate {
-  75%,
+@keyframes bounce {
+  0%,
   100% {
-    transform: scale(3);
-    opacity: 0;
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+.Bounce {
+  animation: bounce 1s infinite;
 }
 
 @keyframes waves {
@@ -36,20 +43,11 @@
   }
 }
 
-.OscilateFast {
-  @apply bg-app-gray-160;
-  animation: oscilate 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-.OscilateSlow {
-  @apply bg-app-gray-175;
-  animation: oscilate 4s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
 .Card {
   @apply rounded-md  backdrop-blur-[2px] bg-app-gray-110-020;
   box-shadow: 8px 8px 10px 0 var(--app-gray-030-030);
   border: 1px solid var(--app-gray-255-020);
+  transform: translateY(-29.5%) translateX(-20%);
 }
 
 .BaseCircleButton {
@@ -67,7 +65,7 @@
 
 .CircleButtonAnimationSlow {
   @apply CircleButtonRaised;
-  animation: wavesLonger 3s linear infinite;
+  animation: wavesLonger 3s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .CircleButtonAnimationNormal {
@@ -88,4 +86,127 @@
 .CircleButtonFlat {
   @apply BaseCircleButton;
   @apply border border-app-gray-210;
+}
+
+/* experiments */
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.2);
+    /* opacity: 0.75; */
+  }
+}
+
+.Pulse {
+  animation: pulse 3s linear infinite;
+}
+
+@keyframes oscilate {
+  75%,
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.OscilateFast {
+  @apply bg-app-gray-160;
+  animation: oscilate 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.OscilateSlow {
+  @apply bg-app-gray-175;
+  animation: oscilate 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.Ring {
+  background-color: var(--app-gray-235-030);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.3),
+    10px 10px 15px rgba(70, 70, 70, 0.15),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.3),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.15);
+  border: 15px solid #ececec;
+  border-radius: 50%;
+}
+
+.Ring1 {
+  @apply Ring;
+  height: 280px;
+  width: 280px;
+  animation: glow1 2.5s linear infinite;
+}
+
+.Ring2 {
+  @apply Ring;
+  height: 200px;
+  width: 200px;
+  animation: glow2 2.5s linear infinite;
+}
+
+.Ring3 {
+  @apply Ring;
+  height: 120px;
+  width: 120px;
+  animation: glow3 2.5s linear infinite;
+}
+
+.Ring4 {
+  @apply Ring;
+  height: 30px;
+  width: 30px;
+  animation: glow4 2.5s linear infinite;
+}
+
+@keyframes glow1 {
+  60% {
+    background-color: var(--app-gray-235-030);
+  }
+  80% {
+    background-color: var(--app-gray-030-030);
+  }
+  100% {
+    background-color: var(--app-gray-235-030);
+  }
+}
+
+@keyframes glow2 {
+  40% {
+    background-color: var(--app-gray-235-030);
+  }
+  60% {
+    background-color: var(--app-gray-030-030);
+  }
+  100% {
+    background-color: var(--app-gray-235-030);
+  }
+}
+
+@keyframes glow3 {
+  20% {
+    background-color: var(--app-gray-235-030);
+  }
+  40% {
+    background-color: var(--app-gray-030-030);
+  }
+  100% {
+    background-color: var(--app-gray-235-030);
+  }
+}
+
+@keyframes glow4 {
+  0% {
+    background-color: var(--app-gray-235-030);
+  }
+  20% {
+    background-color: var(--app-gray-030-030);
+  }
+  100% {
+    background-color: var(--app-gray-235-030);
+  }
 }
