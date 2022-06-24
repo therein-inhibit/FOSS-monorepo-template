@@ -56,7 +56,7 @@ const App: Component = () => {
         </Button>
 
         <Box>
-          <Button class="fixed h-16 w-16 p-[150px]">Back</Button>
+          <Button class="fixed h-16 w-16 p-[170px]">Back</Button>
           <Loader></Loader>
         </Box>
         {/* <CircleButton> </CircleButton> */}
