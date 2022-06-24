@@ -31,13 +31,13 @@ render(() => <App />, document.getElementById("root") as HTMLElement);
 //     //   `"${color}-${opacity}": "rgba(${color},${color},${color}, ${j / 100})"`
 //     // );
 //     if (j === 100) {
-//       cache.push(`"${color}": "rgba(${color},${color},${color}, ${j / 100})"`);
+//       cache.push(`--app-gray-${color}: rgba(${i},${i},${i}, ${j / 100})`);
 //     } else {
 //       cache.push(
-//         `"${color}-${opacity}": "rgba(${color},${color},${color}, ${j / 100})"`
+//         `--app-gray-${color}-${opacity}: rgba(${i},${i},${i}, ${j / 100})`
 //       );
 //     }
 //   }
 // }
 
-// console.log(cache.join(",\n"));
+// console.log(cache.join(";\n"));

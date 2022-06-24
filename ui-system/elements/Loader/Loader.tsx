@@ -1,4 +1,4 @@
-import { Center } from "ui-system";
+import { Center, Box, VStack } from "ui-system";
 
 import styles from "./loader.module.css";
 
@@ -9,16 +9,25 @@ export type LoaderProps = {
 
 export function Loader({ children, class: klass = "", ...rest }: LoaderProps) {
   return (
-    <Center class={`${styles.Card} h-[12rem] w-[12rem]`}>
-      <span class={styles.CircleButtonAnimationSlow}></span>
-      <span class={styles.CircleButtonAnimationFast}></span>
-      <span
-        class={`bg-app-gray-a0 h-8 w-8 fixed z-10 rounded-full ${styles.OscilateFast} `}
-      ></span>
-      <span
-        class={`bg-app-gray-b0 h-8 w-8 fixed z-10 rounded-full ${styles.OscilateSlow} `}
-      ></span>
-      <span class={`${klass}`} {...rest}></span>
+    <Center class={`${styles.Card} h-[22rem] w-[22rem]`}>
+      <VStack class="">
+        <Center class="mt-[7rem]">
+          <span class={styles.CircleButtonAnimationSlow}></span>
+          <span class={styles.CircleButtonAnimationNormal}></span>
+          <span class={styles.CircleButtonAnimationFast}></span>
+          <span class={styles.CircleButtonRaised}></span>
+        </Center>
+        {/* <span
+        class={` h-8 w-8 fixed rounded-full ${styles.OscilateFast} `}
+      ></span> */}
+        {/* <span
+        class={`h-8 w-8 fixed z-10 rounded-full ${styles.OscilateSlow} `}
+      ></span> */}
+        <Box class="h-[7rem]"></Box>
+        <Box class={`${klass} mb-auto text-center z-50 `} {...rest}>
+          LOADING...
+        </Box>
+      </VStack>
     </Center>
   );
 }
