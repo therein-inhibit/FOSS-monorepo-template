@@ -1,7 +1,7 @@
 .BaseButton {
   @apply flex rounded-md;
   @apply h-fit w-fit;
-  @apply bg-app-gray-232;
+  @apply bg-app-gray-230;
 }
 
 .RaisedButton {
@@ -20,7 +20,7 @@
 
 .FlatButton {
   @apply BaseButton;
-  @apply border border-app-gray-208;
+  @apply border border-app-gray-210;
 }
 
 .FlattenButton {
@@ -30,13 +30,13 @@
 
   /* animation */
   transition: background 1s;
-  @apply active:bg-app-gray-197 active:transition-none;
+  @apply active:bg-app-gray-200 active:transition-none;
 }
 
 .BaseCircleButton {
   @apply rounded-full;
   @apply h-8 w-8;
-  @apply bg-app-gray-232;
+  @apply bg-app-gray-230;
   @apply fixed;
 }
 
@@ -63,7 +63,7 @@
 
 .CircleButtonFlat {
   @apply BaseCircleButton;
-  @apply border border-app-gray-208;
+  @apply border border-app-gray-210;
 }
 
 .Card {

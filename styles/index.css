@@ -6,14 +6,14 @@
 
 @layer utilities {
   .app-light-shallow {
-    @apply bg-app-gray-232;
-    box-shadow: inset 5px 5px 9px var(--app-gray-197),
+    @apply bg-app-gray-230;
+    box-shadow: inset 5px 5px 9px var(--app-gray-200),
       inset -5px -5px 9px var(--app-gray-255);
   }
 
   .app-light-raised {
-    @apply bg-app-gray-232;
-    box-shadow: 5px 5px 9px var(--app-gray-197),
+    @apply bg-app-gray-230;
+    box-shadow: 5px 5px 9px var(--app-gray-200),
       -5px -5px 9px var(--app-gray-255);
   }
 }

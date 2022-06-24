@@ -30,10 +30,11 @@
 }
 
 .Card {
-  @apply rounded-md bg-app-gray-204 bg-opacity-75 backdrop-blur-[2px];
+  @apply rounded-md  backdrop-blur-[2px] bg-app-gray-040-025;
   /* background: rgba(255, 255, 255, 0.25); */
 
-  background: rgba(40, 40, 40, 0.25);
+  /* background: var(--app-gray-040-025) */
+  /* background: rgba(40, 40, 40, 0.25); */
   /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
 
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -46,7 +47,7 @@
 .BaseCircleButton {
   @apply rounded-full;
   @apply h-8 w-8;
-  @apply bg-app-gray-232;
+  @apply bg-app-gray-230;
   @apply fixed;
 }
 
@@ -73,5 +74,5 @@
 
 .CircleButtonFlat {
   @apply BaseCircleButton;
-  @apply border border-app-gray-208;
+  @apply border border-app-gray-210;
 }
