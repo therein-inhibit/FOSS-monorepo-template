@@ -14,7 +14,7 @@ export function Loader({ children, class: klass = "", ...rest }: LoaderProps) {
         <Center class="mt-[7rem]">
           <span class={styles.CircleButtonAnimationSlow}></span>
           <span class={styles.CircleButtonAnimationNormal}></span>
-          <span class={styles.CircleButtonAnimationFast}></span>
+          {/* <span class={styles.CircleButtonAnimationFast}></span> */}
           <span class={styles.CircleButtonRaised}></span>
         </Center>
         {/* <span
@@ -24,6 +24,7 @@ export function Loader({ children, class: klass = "", ...rest }: LoaderProps) {
         class={`h-8 w-8 fixed z-10 rounded-full ${styles.OscilateSlow} `}
       ></span> */}
         <Box class="h-[7rem]"></Box>
+        {/* TODO: make text bold */}
         <Box class={`${klass} mb-auto text-center z-50 `} {...rest}>
           LOADING...
         </Box>
