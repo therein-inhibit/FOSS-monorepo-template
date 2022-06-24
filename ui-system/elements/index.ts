@@ -2,3 +2,4 @@
 
 export * from "ui-system/elements/Button";
 export * from "ui-system/elements/Bar";
+export * from "ui-system/elements/Loader";

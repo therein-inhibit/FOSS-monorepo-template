@@ -8,7 +8,10 @@ import {
   CircleButton,
   ButtonShallow,
   Bar,
+  Loader,
 } from "ui-system";
+import { range } from "lib";
+// import { Loader } from "../elements/Loader";
 
 // TODO: create containers, elements, components and widget
 const App: Component = () => {
@@ -52,7 +55,11 @@ const App: Component = () => {
           raised
         </Button>
 
-        <CircleButton> </CircleButton>
+        <Box>
+          <Button class="fixed h-16 w-16 p-[100px]">Back</Button>
+          <Loader></Loader>
+        </Box>
+        {/* <CircleButton> </CircleButton> */}
       </VStack>
     </Center>
     // <p class="text-4xl text-green-700 text-center py-20"></p>
@@ -60,6 +67,44 @@ const App: Component = () => {
 };
 
 export default App;
+
+let cache = [];
+
+for (let i of range(0, 255)) {
+  for (let j of range(0, 100, 5)) {
+    let color = String(i);
+    let opacity = String(j);
+
+    if (i < 10) {
+      color = `00${i}`;
+    } else if (i >= 10 && i < 100) {
+      color = `0${i}`;
+    }
+
+    if (j < 10) {
+      opacity = `00${j}`;
+    } else if (j >= 10 && j < 100) {
+      opacity = `0${j}`;
+    }
+
+    // console.log(
+    //   `"${color}-${opacity}": "rgba(${color},${color},${color}, ${j / 100})"`
+    // );
+    if (j === 100) {
+      cache.push(
+        `--app-gray-${color}: rgba(${color},${color},${color}, ${j / 100})`
+      );
+    } else {
+      cache.push(
+        `--app-gray-${color}-${opacity}: rgba(${color},${color},${color}, ${
+          j / 100
+        })`
+      );
+    }
+  }
+}
+
+console.log(cache.join(";\n"));
 
 // let alpha = "0123456789abcdef".split("");
 

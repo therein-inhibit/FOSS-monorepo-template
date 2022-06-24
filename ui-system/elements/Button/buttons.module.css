@@ -1,7 +1,7 @@
 .BaseButton {
   @apply flex rounded-md;
   @apply h-fit w-fit;
-  @apply bg-app-gray-e8;
+  @apply bg-app-gray-232;
 }
 
 .RaisedButton {
@@ -20,23 +20,23 @@
 
 .FlatButton {
   @apply BaseButton;
-  @apply border border-app-gray-d0;
+  @apply border border-app-gray-208;
 }
 
 .FlattenButton {
   @apply BaseButton;
   @apply border;
-  @apply hover:bg-app-gray-d7;
+  @apply hover:bg-app-gray-215;
 
   /* animation */
   transition: background 1s;
-  @apply active:bg-app-gray-c5 active:transition-none;
+  @apply active:bg-app-gray-197 active:transition-none;
 }
 
 .BaseCircleButton {
   @apply rounded-full;
-  @apply h-16 w-16;
-  @apply bg-app-gray-e8;
+  @apply h-8 w-8;
+  @apply bg-app-gray-232;
   @apply fixed;
 }
 
@@ -63,7 +63,38 @@
 
 .CircleButtonFlat {
   @apply BaseCircleButton;
-  @apply border border-app-gray-d0;
+  @apply border border-app-gray-208;
+}
+
+.Card {
+  /* background: rgba(255, 255, 255, 0.25); */
+
+  background: rgba(40, 40, 40, 0.25);
+  /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+/* .Oscilate {
+  animation: oscilate 2s linear infinite;
+} */
+
+@keyframes oscilate {
+  75%,
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+.OscilateFast {
+  animation: oscilate 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.OscilateSlow {
+  animation: oscilate 4s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 @keyframes waves {
@@ -72,10 +103,11 @@
     opacity: 1;
   }
   50% {
+    transform: scale(2);
     opacity: 1;
   }
   100% {
-    transform: scale(2);
+    transform: scale(4);
     opacity: 0;
   }
 }

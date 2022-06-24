@@ -12,7 +12,7 @@ export function range(start = 0, end = Infinity, step = 1): Iterable<number> {
             return { value: iterationCount, done: true };
           }
 
-          if (nextIndex < end) {
+          if (nextIndex <= end) {
             let result = { value: nextIndex, done: false };
             nextIndex += step;
             iterationCount++;

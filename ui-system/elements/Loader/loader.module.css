@@ -1,0 +1,77 @@
+@keyframes oscilate {
+  75%,
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+@keyframes waves {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.OscilateFast {
+  animation: oscilate 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.OscilateSlow {
+  animation: oscilate 4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.Card {
+  @apply rounded-md bg-app-gray-204 bg-opacity-75 backdrop-blur-[2px];
+  /* background: rgba(255, 255, 255, 0.25); */
+
+  background: rgba(40, 40, 40, 0.25);
+  /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  /* backdrop-filter: blur(2px); */
+  /* -webkit-backdrop-filter: blur(2px); */
+  /* border-radius: 10px; */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.BaseCircleButton {
+  @apply rounded-full;
+  @apply h-8 w-8;
+  @apply bg-app-gray-232;
+  @apply fixed;
+}
+
+.CircleButtonRaised {
+  @apply BaseCircleButton;
+  @apply app-light-raised;
+  transition: all 0.2s linear;
+}
+
+.CircleButtonAnimationSlow {
+  @apply CircleButtonRaised;
+  animation: waves 4s linear infinite;
+}
+
+.CircleButtonAnimationFast {
+  @apply CircleButtonRaised;
+  animation: waves 2s linear infinite;
+}
+
+.CircleButtonShallow {
+  @apply BaseCircleButton;
+  @apply app-light-shallow;
+}
+
+.CircleButtonFlat {
+  @apply BaseCircleButton;
+  @apply border border-app-gray-208;
+}

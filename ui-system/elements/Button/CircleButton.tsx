@@ -1,7 +1,7 @@
 import type { JSX } from "solid-js";
 import { createSignal, onCleanup } from "solid-js";
 
-import { Center } from "ui-system";
+import { Box, Center, Button } from "ui-system";
 
 import styles from "ui-system/elements/Button/buttons.module.css";
 
@@ -38,49 +38,56 @@ export function CircleButton({
   });
 
   return (
-    <Center>
-      <span class={styles.CircleButtonAnimationSlow}></span>
-      <span class={styles.CircleButtonAnimationFast}></span>
-      <button
-        type="button"
-        class={`${style()} ${klass}`}
-        onMouseEnter={(evt) => {
-          if (pressedDown()) {
+    <Box>
+      <Button class="fixed h-16 w-16 p-[100px]">Back</Button>
+      <Center class={`${styles.Card} h-32 w-32`}>
+        <span class={styles.CircleButtonAnimationSlow}></span>
+        <span class={styles.CircleButtonAnimationFast}></span>
+        <span
+          class={`bg-app-gray-a0 h-8 w-8 fixed z-10 rounded-full ${styles.OscilateFast} `}
+        ></span>
+        <span
+          class={`bg-app-gray-b0 h-8 w-8 fixed z-10 rounded-full ${styles.OscilateSlow} `}
+        ></span>
+        <button
+          type="button"
+          class={`${style()} ${klass}`}
+          onMouseEnter={(evt) => {
+            if (pressedDown()) {
+              setFlat(true);
+            }
+
+            if (typeof onMouseEnter === "function") {
+              onMouseEnter(evt);
+            }
+          }}
+          onMouseDown={(evt) => {
             setFlat(true);
-          }
+            setPressedDown(true);
 
-          if (typeof onMouseEnter === "function") {
-            onMouseEnter(evt);
-          }
-        }}
-        onMouseDown={(evt) => {
-          setFlat(true);
-          setPressedDown(true);
+            if (typeof onMouseDown === "function") {
+              onMouseDown(evt);
+            }
+          }}
+          onMouseOut={(evt) => {
+            setFlat(false);
 
-          if (typeof onMouseDown === "function") {
-            onMouseDown(evt);
-          }
-        }}
-        onMouseOut={(evt) => {
-          setFlat(false);
+            if (typeof onMouseOut === "function") {
+              onMouseOut(evt);
+            }
+          }}
+          onClick={(evt) => {
+            setRaised((v) => !v);
+            setFlat(false);
+            setPressedDown(false);
 
-          if (typeof onMouseOut === "function") {
-            onMouseOut(evt);
-          }
-        }}
-        onClick={(evt) => {
-          setRaised((v) => !v);
-          setFlat(false);
-          setPressedDown(false);
-
-          if (typeof onClick === "function") {
-            onClick(evt);
-          }
-        }}
-        {...rest}
-      >
-        {children}
-      </button>
-    </Center>
+            if (typeof onClick === "function") {
+              onClick(evt);
+            }
+          }}
+          {...rest}
+        ></button>
+      </Center>
+    </Box>
   );
 }
