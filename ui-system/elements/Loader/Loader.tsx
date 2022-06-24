@@ -9,8 +9,9 @@ export type LoaderProps = {
 
 export function Loader({ children, class: klass = "", ...rest }: LoaderProps) {
   return (
-    <Center class={`${styles.Card} h-[24rem] w-[24rem]`}>
+    <Center class={`${styles.Card} h-[28rem] w-[32rem]`}>
       <VStack class="">
+        {/* <Center class="h-[24rem] w-[24rem] bg-app-gray-110-015 rounded-md border border-app-gray-110-015"> */}
         <Center>
           {/* <div class={`${styles.Ring1}`}></div>
           <div class={`${styles.Ring2}`}></div>
