@@ -13,6 +13,17 @@ import {
 import { range } from "lib";
 // import { Loader } from "../elements/Loader";
 
+setTimeout(() => {
+  console.log("active");
+  let [_, set] = Overlay.signal;
+  set(true);
+
+  setTimeout(() => {
+    console.log("deac");
+    set(false);
+  }, 5000);
+}, 5000);
+
 // TODO: create containers, elements, components and widget
 const App: Component = () => {
   return (

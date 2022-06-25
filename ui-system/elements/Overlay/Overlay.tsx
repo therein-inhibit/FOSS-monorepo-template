@@ -1,7 +1,8 @@
 import type { JSX } from "solid-js";
+import { createSignal, createEffect } from "solid-js";
 import { Portal } from "solid-js/web";
 
-import { Center, Box } from "ui-system";
+import { Box } from "ui-system";
 import styles from "./overlay.module.css";
 
 export type OverlayProps = {
@@ -9,19 +10,31 @@ export type OverlayProps = {
   class?: string;
 } & Record<string, unknown>;
 
+const signal = createSignal(false);
 export function Overlay({
   children,
   class: klass = "",
   ...rest
 }: OverlayProps) {
-  document.body.style.overflow = "hidden";
+  let [overActive] = signal;
+
+  createEffect(() => {
+    if (overActive()) {
+      console.log("scroll hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    if (overActive() === false) {
+      console.log("scroll not hidden");
+      document.body.style.overflow = "";
+    }
+  });
 
   return (
-    // <Portal useShadow={true}>
     <Portal>
-      {/* <Center class={`${klass} ${styles.Card}  z-10 top-0`} {...rest}> */}
       <Box class={`${styles.Card}`}>{children}</Box>
-      {/* </Center> */}
     </Portal>
   );
 }
+
+Overlay.signal = signal;
