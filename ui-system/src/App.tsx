@@ -1,24 +1,22 @@
 import type { Component } from "solid-js";
 import {
   Box,
-  Button,
+  // Button,
   Center,
-  VStack,
-  FlatButton,
-  CircleButton,
-  ButtonShallow,
-  Bar,
-  Loader,
+  // VStack,
+  // FlatButton,
+  // CircleButton,
+  // ButtonShallow,
+  // Bar,
+  Spinner,
 } from "ui-system";
-import { range } from "lib";
-// import { Loader } from "../elements/Loader";
 
 // TODO: create containers, elements, components and widget
 const App: Component = () => {
   return (
     <Center class="h-screen w-screen bg-app-gray-235 text-app-gray-050">
-      <VStack class="gap-20 items-center">
-        <Bar class="gap-10 px-4 py-2 rounded-md">
+      {/* <VStack class="gap-20 items-center"> */}
+      {/* <Bar class="gap-10 px-4 py-2 rounded-md">
           <ButtonShallow
             class="py-1.5 px-3"
             variante="shallow"
@@ -53,17 +51,17 @@ const App: Component = () => {
           }}
         >
           raised
-        </Button>
+        </Button> */}
 
-        <Box>
-          <Button class="fixed h-16 w-16 p-[170px]">Back</Button>
-          <Loader></Loader>
-        </Box>
-        {/* <CircleButton> </CircleButton> */}
-      </VStack>
+      {/* <Box> */}
+      {/* <Button class="fixed h-16 w-16 p-[170px]">Back</Button> */}
+      <Spinner />
+      {/* </Box> */}
+      {/* <CircleButton> </CircleButton> */}
+      {/* </VStack> */}
     </Center>
-    // <p class="text-4xl text-green-700 text-center py-20"></p>
   );
 };
 
 export default App;
+// <p class="text-4xl text-green-700 text-center py-20"></p>
