@@ -1,5 +1,5 @@
 .Card {
-  @apply backdrop-blur-[2px] bg-app-gray-110-020 z-10;
+  @apply backdrop-blur-[2px] bg-app-gray-020-020 z-10;
   @apply absolute top-0 h-full w-full;
   /* box-shadow: 8px 8px 10px 0 var(--app-gray-030-030);
   border: 1px solid var(--app-gray-255-020); */
