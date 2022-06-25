@@ -58,7 +58,6 @@ const App: Component = () => {
               flat 2
             </FlatButton>
           </Bar>
-
           <Button
             class="p-3"
             onClick={(evt) => {
@@ -67,7 +66,15 @@ const App: Component = () => {
           >
             raised
           </Button>
-
+          <FlatButton
+            class="p-3"
+            onClick={() => {
+              let [_, set] = Modal.signal;
+              set(true);
+            }}
+          >
+            OpenModal
+          </FlatButton>
           <Box>
             <Button class="h-16 w-16 p-[170px]">Back</Button>
           </Box>
@@ -80,6 +87,7 @@ const App: Component = () => {
           {/* <CircleButton> </CircleButton> */}
         </VStack>
       </Center>
+
       <Modal class="h-64 w-64 ">
         <FlatButton
           class="p-3"
