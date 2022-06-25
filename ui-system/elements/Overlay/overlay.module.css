@@ -1,3 +1,7 @@
+/* TODO:
+  write css to keep the margin with less opacity
+  however the main content should have a higher opacity
+*/
 .Card {
   @apply backdrop-blur-[2px] bg-app-gray-050-015 z-10;
   @apply absolute top-0 h-full w-full;
