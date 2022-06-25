@@ -1,3 +1,4 @@
+import type { JSX } from "solid-js";
 import { Center, Box, VStack } from "ui-system";
 
 import { Spinner as SpinnerIcon } from "ui-system/icons";
@@ -13,9 +14,8 @@ export function Spinner({
   children,
   class: klass = "",
   ...rest
-}: SpinnerProps) {
+}: SpinnerProps): JSX.Element {
   return (
-    // <Center class={`h-[28rem] w-[32rem]`}>
     <Center>
       <span class={styles.SpinnerWaveSlow}></span>
       <span class={styles.SpinnerWaveFast}></span>
@@ -23,6 +23,5 @@ export function Spinner({
         <SpinnerIcon class={styles.Spinner} />
       </Center>
     </Center>
-    // </Center>
   );
 }
