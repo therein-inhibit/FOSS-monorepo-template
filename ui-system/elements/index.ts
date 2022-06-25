@@ -6,3 +6,4 @@ export * from "ui-system/elements/Bar";
 export * from "ui-system/elements/Spinner";
 export * from "ui-system/elements/Overlay";
 export * from "ui-system/elements/Modal";
+export * from "ui-system/elements/Card";

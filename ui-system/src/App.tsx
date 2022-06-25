@@ -5,13 +5,16 @@ import {
   Center,
   VStack,
   FlatButton,
-  Overlay,
+  Card,
   ButtonShallow,
   Bar,
   Spinner,
   Modal,
+  CloseButton,
 } from "ui-system";
 import { range } from "lib";
+import { Close as CloseIcon } from "ui-system/icons";
+// import { CloseButton } from "../elements/Button/CloseButton";
 // import { Loader } from "../elements/Loader";
 
 // setTimeout(() => {
@@ -29,7 +32,7 @@ import { range } from "lib";
 const App: Component = () => {
   return (
     <>
-      <Center class="h-full w-full bg-app-gray-235 text-app-gray-050">
+      <Center class="h-full w-full bg-app-gray-235 text-app-gray-050 p-2">
         <VStack class="gap-20 items-center">
           <Bar class="gap-10 px-4 py-2 rounded-md">
             <ButtonShallow
@@ -88,19 +91,47 @@ const App: Component = () => {
         </VStack>
       </Center>
 
-      <Modal class="h-64 w-64 ">
-        <FlatButton
-          class="p-3"
-          onClick={() => {
-            let [_, set] = Overlay.signal;
-            set((v) => !v);
-          }}
-        >
-          Close
-        </FlatButton>
-        <Center class="h-full w-full">
+      <Modal class="h-64 w-64">
+        <Card class={`h-64 w-64`}>
+          <CloseButton
+            onClick={() => {
+              let [_, set] = Modal.signal;
+              set(false);
+            }}
+          />
+          {/* <button
+            class=" absolute right-0 rounded-full"
+
+          >
+            <CloseIcon />
+          </button> */}
+          <Box class="overflow-scroll p-2">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Adipiscing tristique risus nec feugiat in fermentum posuere. Nibh
+            ipsum consequat nisl vel pretium lectus quam id leo. Sollicitudin ac
+            orci phasellus egestas tellus rutrum tellus. Ut ornare lectus sit
+            amet est placerat in egestas. Nibh sit amet commodo nulla facilisi
+            nullam vehicula ipsum. Mi tempus imperdiet nulla malesuada
+            pellentesque elit eget gravida. Est ante in nibh mauris cursus
+            mattis molestie a. Nunc mi ipsum faucibus vitae aliquet nec
+            ullamcorper sit amet. Metus dictum at tempor commodo ullamcorper a
+            lacus. Sed ullamcorper morbi tincidunt ornare massa eget egestas
+            purus. Gravida neque convallis a cras semper auctor neque vitae. In
+            nisl nisi scelerisque eu ultrices. Tempor id eu nisl nunc mi ipsum
+            faucibus vitae aliquet. Adipiscing elit duis tristique sollicitudin.
+            Sed velit dignissim sodales ut eu. Ipsum nunc aliquet bibendum enim
+            facilisis. Ut eu sem integer vitae justo eget. Nec tincidunt
+            praesent semper feugiat. Varius quam quisque id diam vel. Vitae
+            elementum curabitur vitae nunc sed velit dignissim sodales. Tortor
+            at auctor urna nunc id cursus. Blandit massa enim nec dui nunc
+            mattis.
+          </Box>
+        </Card>
+
+        {/* <Center class="h-full w-full">
           <Spinner />
-        </Center>
+        </Center> */}
       </Modal>
       {/* <Overlay>
         <Center class="w-full h-full">

@@ -1,5 +1,5 @@
 import type { JSX } from "solid-js";
-import { createSignal, createEffect } from "solid-js";
+import { createSignal, createEffect, onCleanup } from "solid-js";
 import { Portal } from "solid-js/web";
 
 import { Box } from "ui-system";
@@ -16,18 +16,21 @@ export function Overlay({
   class: klass = "",
   ...rest
 }: OverlayProps) {
-  let [overActive] = signal;
+  let [showOverlay, setShowOverlay] = signal;
 
   createEffect(() => {
-    if (overActive()) {
-      console.log("scroll hidden");
+    if (showOverlay()) {
       document.body.style.overflow = "hidden";
     }
 
-    if (overActive() === false) {
-      console.log("scroll not hidden");
+    if (showOverlay() === false) {
       document.body.style.overflow = "";
     }
+  });
+
+  onCleanup(() => {
+    setShowOverlay(false);
+    document.body.style.overflow = "";
   });
 
   return (

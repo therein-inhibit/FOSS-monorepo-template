@@ -1,3 +1,8 @@
+.CloseBtn {
+  @apply absolute right-0 rounded-full border bg-app-gray-230;
+  transform: translateY(-40%) translateX(40%);
+}
+
 .BaseButton {
   @apply flex rounded-md;
   @apply h-fit w-fit;
