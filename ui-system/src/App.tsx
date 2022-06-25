@@ -1,4 +1,4 @@
-import type { Component } from "solid-js";
+import { Component, createEffect } from "solid-js";
 import {
   Box,
   Button,
@@ -9,20 +9,21 @@ import {
   ButtonShallow,
   Bar,
   Spinner,
+  Modal,
 } from "ui-system";
 import { range } from "lib";
 // import { Loader } from "../elements/Loader";
 
-setTimeout(() => {
-  console.log("active");
-  let [_, set] = Overlay.signal;
-  set(true);
+// setTimeout(() => {
+//   console.log("active");
+//   let [_, set] = Overlay.signal;
+//   set(true);
 
-  setTimeout(() => {
-    console.log("deac");
-    set(false);
-  }, 5000);
-}, 5000);
+//   setTimeout(() => {
+//     console.log("deac");
+//     set(false);
+//   }, 5000);
+// }, 5000);
 
 // TODO: create containers, elements, components and widget
 const App: Component = () => {
@@ -79,11 +80,26 @@ const App: Component = () => {
           {/* <CircleButton> </CircleButton> */}
         </VStack>
       </Center>
-      <Overlay>
-        <Center class="w-full h-full">
+      <Modal class="h-64 w-64 ">
+        <Button
+          class="p-3"
+          onClick={() => {
+            createEffect(() => {
+              let [_, set] = Overlay.signal;
+              set(false);
+            });
+          }}
+        >
+          Close
+        </Button>
+        <Center class="h-full w-full">
           <Spinner />
         </Center>
-      </Overlay>
+      </Modal>
+      {/* <Overlay>
+        <Center class="w-full h-full">
+        </Center>
+      </Overlay> */}
     </>
     // <p class="text-4xl text-green-700 text-center py-20"></p>
   );
