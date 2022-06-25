@@ -82,7 +82,6 @@ const App: Component = () => {
       </Center>
       <Modal class="h-64 w-64 ">
         <FlatButton
-          variante="flat"
           class="p-3"
           onClick={() => {
             let [_, set] = Overlay.signal;
