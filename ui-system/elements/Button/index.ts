@@ -1,4 +1,4 @@
 export * from "./Button";
-export * from "./FlattenButton";
+export * from "./FlatButton";
 export * from "./CircleButton";
 export * from "./ButtonShallow";

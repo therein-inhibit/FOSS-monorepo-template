@@ -81,17 +81,16 @@ const App: Component = () => {
         </VStack>
       </Center>
       <Modal class="h-64 w-64 ">
-        <Button
+        <FlatButton
+          variante="flat"
           class="p-3"
           onClick={() => {
-            createEffect(() => {
-              let [_, set] = Overlay.signal;
-              set(false);
-            });
+            let [_, set] = Overlay.signal;
+            set((v) => !v);
           }}
         >
           Close
-        </Button>
+        </FlatButton>
         <Center class="h-full w-full">
           <Spinner />
         </Center>
