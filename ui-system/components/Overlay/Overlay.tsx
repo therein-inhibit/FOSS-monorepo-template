@@ -5,11 +5,7 @@ import { Portal } from "solid-js/web";
 import { Box } from "ui-system";
 import styles from "./overlay.module.css";
 
-export type OverlayProps = {
-  children?: JSX.Element;
-  class?: string;
-} & Record<string, unknown>;
-
+//
 const signal = createSignal(false);
 export function Overlay({
   children,

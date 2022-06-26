@@ -61,6 +61,9 @@ const App: Component = () => {
               flat 2
             </FlatButton>
           </Bar>
+          <Center>
+            <Spinner />
+          </Center>
           <Button
             class="p-3"
             onClick={(evt) => {
@@ -69,6 +72,7 @@ const App: Component = () => {
           >
             raised
           </Button>
+
           <FlatButton
             class="p-3"
             onClick={() => {
