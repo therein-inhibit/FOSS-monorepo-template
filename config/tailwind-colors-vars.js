@@ -1,4 +1,4 @@
-module.exports = {
+module.export = {
   "app-gray": {
     "000-00": "rgba(0,0,0, 0)",
     "000-05": "rgba(0,0,0, 0.05)",

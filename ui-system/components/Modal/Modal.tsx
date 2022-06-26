@@ -57,10 +57,10 @@ export function Modal({
       {modalState() ? (
         <Overlay>
           <Center class="h-full w-full" {...rest}>
-            <Box class={` ${styles.ModalContainer} ${klass} relative`}>
-              <Box class="fixed right-0">
+            <Box class={` ${styles.ModalContainer} ${klass}  flex-row-reverse`}>
+              <Box class="fixed app-li">
                 <CloseButton
-                  class="z-10"
+                  class="z-10 m-3 app-light-raised"
                   onClick={() => {
                     let [_, set] = Modal.signal;
                     set(false);

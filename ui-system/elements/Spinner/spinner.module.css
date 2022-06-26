@@ -17,21 +17,27 @@
   }
 }
 
-.SpinnerBackground {
-  @apply fixed rounded-full h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14;
+.BaseSpinner {
+  @apply absolute rounded-full h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14;
   @apply app-light-raised;
 }
 
+.SpinnerBackground {
+  @apply BaseSpinner z-30;
+}
+
 .Spinner {
+  @apply z-30 absolute;
   @apply h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10;
 }
 
 .SpinnerWaveSlow {
-  @apply SpinnerBackground;
+  @apply z-20 BaseSpinner;
+
   animation: waves 4s linear infinite;
 }
 
 .SpinnerWaveFast {
-  @apply SpinnerBackground;
+  @apply z-10 BaseSpinner;
   animation: waves 2s linear infinite;
 }

@@ -17,6 +17,7 @@ importers:
       '@babel/preset-env': ^7.18.2
       '@iconify/json': ~2.1.65
       '@mdx-js/react': 2.1.1
+      '@mertasan/tailwindcss-variables': ~2.2.3
       '@storybook/addon-actions': ^6.5.9
       '@storybook/addon-backgrounds': ^6.5.9
       '@storybook/addon-docs': ^6.5.9
@@ -60,6 +61,7 @@ importers:
       '@babel/core': 7.18.5
       '@babel/preset-env': 7.18.2_@babel+core@7.18.5
       '@mdx-js/react': 2.1.1_react@17.0.2
+      '@mertasan/tailwindcss-variables': 2.2.3_a191cbaa25c4a0a9f05cc78eac153be7
       '@storybook/addon-actions': 6.5.9_react-dom@17.0.2+react@17.0.2
       '@storybook/addon-backgrounds': 6.5.9_react-dom@17.0.2+react@17.0.2
       '@storybook/addon-docs': 6.5.9_8e280f28e5a0b042112201aa7b2bb1a8
@@ -1848,6 +1850,18 @@ packages:
 
   /@mdx-js/util/1.6.22:
     resolution: {integrity: sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==}
+    dev: true
+
+  /@mertasan/tailwindcss-variables/2.2.3_a191cbaa25c4a0a9f05cc78eac153be7:
+    resolution: {integrity: sha512-FAgpAwuub43kGTCj7iPQmUrZabs+0fa5nl2n07rCYm2ho2gmmSZsX+u4+0Xp8fWbFUDEYJ8MjOMLhJqnNIBe0A==}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      autoprefixer: ^10.0.2
+      postcss: ^8.0.9
+    dependencies:
+      autoprefixer: 10.4.7_postcss@8.4.14
+      lodash: 4.17.21
+      postcss: 8.4.14
     dev: true
 
   /@mrmlnc/readdir-enhanced/2.2.1:

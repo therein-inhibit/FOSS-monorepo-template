@@ -1,6 +1,6 @@
 .Card {
-  @apply rounded-md  backdrop-blur-[2px] bg-app-gray-250-070;
-  box-shadow: 8px 8px 10px 0 var(--app-gray-030-030);
-  border: 1px solid var(--app-gray-255-020);
+  @apply rounded-md  backdrop-blur-[2px] bg-app-gray-250-70;
+  box-shadow: 8px 8px 10px 0 var(--app-gray-030-30);
+  border: 1px solid var(--app-gray-255-20);
   /* transform: translateY(-25%) translateX(-20%); */
 }

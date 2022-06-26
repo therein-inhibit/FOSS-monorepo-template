@@ -11,12 +11,12 @@ export function Spinner({
   ...rest
 }: JSX.HTMLAttributes<HTMLDivElement>): JSX.Element {
   return (
-    <>
+    <Center class="relative">
       <span class={styles.SpinnerWaveSlow}></span>
       <span class={styles.SpinnerWaveFast}></span>
       <Center class={`${styles.SpinnerBackground}`}>
         <SpinnerIcon class={styles.Spinner} />
       </Center>
-    </>
+    </Center>
   );
 }
