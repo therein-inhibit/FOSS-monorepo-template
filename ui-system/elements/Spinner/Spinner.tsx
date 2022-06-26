@@ -5,16 +5,11 @@ import { Spinner as SpinnerIcon } from "ui-system/icons";
 
 import styles from "./spinner.module.css";
 
-export type SpinnerProps = {
-  children?: JSX.Element;
-  class?: string;
-} & Record<string, unknown>;
-
 export function Spinner({
   children,
   class: klass = "",
   ...rest
-}: SpinnerProps): JSX.Element {
+}: JSX.HTMLAttributes<HTMLDivElement>): JSX.Element {
   return (
     <>
       <span class={styles.SpinnerWaveSlow}></span>

@@ -1,6 +1,7 @@
 .CloseBtn {
-  @apply absolute right-0 rounded-full border bg-app-gray-230;
-  transform: translateY(-40%) translateX(40%);
+  @apply right-0 rounded-full p-1;
+  /* transform: translateY(20%) translateX(-20%); */
+  /* @apply app-light-raised; */
 }
 
 .BaseButton {

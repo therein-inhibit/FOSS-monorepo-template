@@ -7,6 +7,7 @@ export function Close({ class: klass = "" }: IconProps) {
       xmlns="http://www.w3.org/2000/svg"
       class={`${klass} rounded-full ${styles.IconSize} `}
       aria-hidden="true"
+      // role="img"
       width="1em"
       height="1em"
       preserveAspectRatio="xMidYMid meet"
@@ -14,10 +15,24 @@ export function Close({ class: klass = "" }: IconProps) {
     >
       <path
         fill="currentColor"
-        stroke="var(--app-gray-110)"
-        d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896zm0 393.664L407.936 353.6a38.4 38.4 0 1 0-54.336 54.336L457.664 512L353.6 616.064a38.4 38.4 0 1 0 54.336 54.336L512 566.336L616.064 670.4a38.4 38.4 0 1 0 54.336-54.336L566.336 512L670.4 407.936a38.4 38.4 0 1 0-54.336-54.336L512 457.664z"
+        d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504L738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512L828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496L285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512L195.2 285.696a64 64 0 0 1 0-90.496z"
       />
     </svg>
+    // <svg
+    //   xmlns="http://www.w3.org/2000/svg"
+    //   class={`${klass} rounded-full ${styles.IconSize} `}
+    //   aria-hidden="true"
+    //   width="1em"
+    //   height="1em"
+    //   preserveAspectRatio="xMidYMid meet"
+    //   viewBox="0 0 1024 1024"
+    // >
+    //   <path
+    //     fill="var(--app-gray-255)"
+    //     stroke="var(--app-gray-255)"
+    //     d="M512 64a448 448 0 1 1 0 896a448 448 0 0 1 0-896zm0 393.664L407.936 353.6a38.4 38.4 0 1 0-54.336 54.336L457.664 512L353.6 616.064a38.4 38.4 0 1 0 54.336 54.336L512 566.336L616.064 670.4a38.4 38.4 0 1 0 54.336-54.336L566.336 512L670.4 407.936a38.4 38.4 0 1 0-54.336-54.336L512 457.664z"
+    //   />
+    // </svg>
   );
 }
 

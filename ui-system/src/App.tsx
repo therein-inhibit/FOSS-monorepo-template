@@ -91,21 +91,22 @@ const App: Component = () => {
         </VStack>
       </Center>
 
-      <Modal class="h-[34rem] w-[34rem]">
-        <Card class={`h-full w-full`}>
-          <CloseButton
-            onClick={() => {
-              let [_, set] = Modal.signal;
-              set(false);
-            }}
-          />
-          {/* <button
+      <Modal
+        class="h-[34rem] w-[34rem]"
+        body={
+          <VStack>
+            {/* <CloseButton
+              onClick={() => {
+                let [_, set] = Modal.signal;
+                set(false);
+              }}
+            /> */}
+            {/* <button
             class=" absolute right-0 rounded-full"
 
           >
             <CloseIcon />
           </button> */}
-          <Box class="overflow-scroll m-4 flex-col">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -150,9 +151,9 @@ const App: Component = () => {
               dignissim sodales. Tortor at auctor urna nunc id cursus. Blandit
               massa enim nec dui nunc mattis.
             </p>
-          </Box>
-        </Card>
-
+          </VStack>
+        }
+      >
         {/* <Center class="h-full w-full">
           <Spinner />
         </Center> */}

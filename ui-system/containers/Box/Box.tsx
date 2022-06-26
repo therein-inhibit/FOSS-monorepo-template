@@ -8,7 +8,7 @@ export function Box({
   children,
   class: klass = "",
   ...rest
-}: ContainerProps): JSX.Element {
+}: JSX.HTMLAttributes<HTMLDivElement>): JSX.Element {
   return (
     <div class={`${styles.Box} ${klass}`} {...rest}>
       {children}

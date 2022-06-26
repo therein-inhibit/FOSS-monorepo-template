@@ -9,5 +9,5 @@
 }
 
 .IconSize {
-  @apply h-6 w-6;
+  @apply h-[1.2rem] w-[1.2rem];
 }

@@ -1,0 +1,52 @@
+.ModalContainer {
+  @apply rounded-md  backdrop-blur-[2px] bg-app-gray-255-050;
+  box-shadow: 8px 8px 10px 0 var(--app-gray-030-030);
+  border: 1px solid var(--app-gray-255-020);
+
+  /* transform: translateY(-25%) translateX(-20%); */
+}
+
+/* NOTE:
+  hack for safari. the background color with trasnparance is rendered diferent
+  So defining the same class later does the trick
+ */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    .ModalContainer {
+      @apply rounded-md  backdrop-blur-[2px] bg-app-gray-235-050;
+    }
+  }
+}
+
+.ModalContent {
+  @apply overflow-scroll m-6  rounded-md bg-app-gray-235-070;
+  /* box-shadow: inset 5px 5px 9px var(--app-gray-200),
+    inset -5px -5px 9px var(--app-gray-255); */
+  /* @apply border-[4rem]  border-app-gray-255-050 */
+  /* box-shadow: 1px 1px 1rem 1rem var(--app-gray-235-070); */
+  /* box-shadow: inset -1px -1px -1rem var(--app-gray-235-070); */
+  /* box-shadow: inset 5px 5px 19px var(--app-gray-255-040),
+    inset -5px -5px 19px var(--app-gray-255-040); */
+  /* inset -1 -1 1rem 1rem var(--app-gray-235-070); */
+}
+/*
+.HOpacityContainer {
+  @apply w-full h-4  mr-12  backdrop-blur-[2px] bg-app-gray-225-070;
+}
+
+.VOpacityContainerRight {
+  @apply w-full h-4  mr-12 mt-4  backdrop-blur-[2px] bg-app-gray-225-070;
+  transform: rotate(270deg);
+  transform-origin: bottom right;
+}
+
+.VOpacityContainerLeft {
+  @apply w-full h-4 mr-12 mb-4 backdrop-blur-[2px] bg-app-gray-225-070;
+  transform: rotate(270deg);
+  transform-origin: left top;
+
+}
+
+*::-webkit-scrollbar {
+  @apply z-10;
+} */
