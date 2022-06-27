@@ -14,19 +14,6 @@ import {
 } from "ui-system";
 import { range } from "lib";
 import { Close as CloseIcon } from "ui-system/icons";
-// import { CloseButton } from "../elements/Button/CloseButton";
-// import { Loader } from "../elements/Loader";
-
-// setTimeout(() => {
-//   console.log("active");
-//   let [_, set] = Overlay.signal;
-//   set(true);
-
-//   setTimeout(() => {
-//     console.log("deac");
-//     set(false);
-//   }, 5000);
-// }, 5000);
 
 // TODO: create containers, elements, components and widget
 const App: Component = () => {

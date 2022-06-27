@@ -1,6 +1,6 @@
 let isProd = process.env.NODE_ENV === "production";
 
-let appGrayColor = require("../config/tailwind-colors");
+let appGrayColors = require("../config/tailwind-colors");
 
 module.exports = {
   content: [
@@ -24,7 +24,7 @@ module.exports = {
         // "2xl": { raw: "(min-width: 1536px) and (min-height:1536px)" },
       },
       colors: {
-        ...appGrayColor,
+        ...appGrayColors,
       },
     },
   },

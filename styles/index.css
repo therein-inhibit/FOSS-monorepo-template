@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
+@layer components {
   .app-light-shallow {
     @apply bg-app-gray-230;
     box-shadow: inset 5px 5px 9px var(--app-gray-200),

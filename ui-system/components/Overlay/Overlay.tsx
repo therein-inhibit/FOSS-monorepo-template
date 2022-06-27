@@ -5,7 +5,7 @@ import { Portal } from "solid-js/web";
 import { Box } from "ui-system";
 import styles from "./overlay.module.css";
 
-//
+// TODO: make it work on iOS
 const signal = createSignal(false);
 export function Overlay({
   children,

@@ -1,5 +1,5 @@
 /* @refresh reload */
-// import "../gray-colors.css";
+
 import "styles";
 import { render } from "solid-js/web";
 
