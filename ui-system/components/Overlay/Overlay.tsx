@@ -16,23 +16,23 @@ export function Overlay({
 
   createEffect(() => {
     if (showOverlay()) {
-      document.body.style.top = `-${window.scrollY}px`;
+      // document.body.style.top = `-${window.scrollY}px`;
       document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed";
+      // document.body.style.position = "fixed";
     }
 
     if (showOverlay() === false) {
       document.body.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.top = "";
+      // document.body.style.position = "";
+      // document.body.style.top = "";
     }
   });
 
   onCleanup(() => {
     setShowOverlay(false);
     document.body.style.overflow = "";
-    document.body.style.position = "";
-    document.body.style.top = "";
+    // document.body.style.position = "";
+    // document.body.style.top = "";
     // document.body.style.position = "";
   });
 

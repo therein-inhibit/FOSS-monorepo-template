@@ -36,6 +36,11 @@ export function Modal({
   body,
   ...rest
 }: ModalProps) {
+  let closeModal = () => {
+    let [_, set] = Modal.signal;
+    set(false);
+  };
+
   createEffect(() => {
     if (modalState()) {
       addOverlay(true);
@@ -58,15 +63,15 @@ export function Modal({
     <>
       {modalState() ? (
         <Overlay>
-          <Center class="h-full w-full" {...rest}>
-            <Box class={` ${styles.ModalContainer} ${klass}  flex-row-reverse`}>
+          <Center class="h-full w-full" {...rest} onClick={closeModal}>
+            <Box
+              class={` ${styles.ModalContainer} ${klass}  flex-row-reverse`}
+              onClick={(evt) => evt.stopPropagation()}
+            >
               <Box class="fixed app-li">
                 <CloseButton
                   class={`${styles.CloseButton}`}
-                  onClick={() => {
-                    let [_, set] = Modal.signal;
-                    set(false);
-                  }}
+                  onClick={closeModal}
                 />
               </Box>
               <VStack class={`${styles.ModalContent}`}>

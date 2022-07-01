@@ -19,7 +19,7 @@ import { Close as CloseIcon } from "ui-system/icons";
 const App: Component = () => {
   return (
     <>
-      <Center class="h-full w-full bg-app-gray-235 text-app-gray-050 p-2">
+      <Center class="h-full w-full  text-app-gray-050 p-2">
         <VStack class="gap-20 items-center">
           <Bar class="gap-10 px-4 py-2 rounded-md">
             {/* <ButtonShallow
