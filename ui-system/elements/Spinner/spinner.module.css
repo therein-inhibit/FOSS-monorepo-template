@@ -17,6 +17,21 @@
   }
 }
 
+@keyframes waves-short {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
 .BaseSpinner {
   @apply absolute rounded-full h-8 w-8 sm:h-10 sm:w-10 md:h-14 md:w-14;
   @apply app-light-raised;
@@ -40,4 +55,9 @@
 .SpinnerWaveFast {
   @apply z-10 BaseSpinner;
   animation: waves 2s linear infinite;
+}
+
+.SpinnerWaveShort {
+  @apply z-10 BaseSpinner;
+  animation: waves-short 2s linear infinite;
 }

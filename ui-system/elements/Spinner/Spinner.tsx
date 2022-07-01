@@ -14,6 +14,7 @@ export function Spinner({
     <Center class="relative">
       <span class={styles.SpinnerWaveSlow}></span>
       <span class={styles.SpinnerWaveFast}></span>
+      <span class={styles.SpinnerWaveShort}></span>
       <Center class={`${styles.SpinnerBackground}`}>
         <SpinnerIcon class={styles.Spinner} />
       </Center>
