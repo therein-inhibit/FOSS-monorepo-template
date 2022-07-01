@@ -46,6 +46,11 @@
   @apply h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10;
 }
 
+.SpinnerWaveShort {
+  @apply z-30 BaseSpinner;
+  animation: waves-short 1s linear infinite;
+}
+
 .SpinnerWaveSlow {
   @apply z-20 BaseSpinner;
 
@@ -55,9 +60,4 @@
 .SpinnerWaveFast {
   @apply z-10 BaseSpinner;
   animation: waves 2s linear infinite;
-}
-
-.SpinnerWaveShort {
-  @apply z-30 BaseSpinner;
-  animation: waves-short 1s linear infinite;
 }
