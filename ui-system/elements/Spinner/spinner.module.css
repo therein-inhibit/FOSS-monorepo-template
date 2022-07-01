@@ -38,11 +38,11 @@
 }
 
 .SpinnerBackground {
-  @apply BaseSpinner z-30;
+  @apply BaseSpinner z-50;
 }
 
 .Spinner {
-  @apply z-30 absolute;
+  @apply z-50 absolute;
   @apply h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10;
 }
 
@@ -58,6 +58,6 @@
 }
 
 .SpinnerWaveShort {
-  @apply z-10 BaseSpinner;
-  animation: waves-short 2s linear infinite;
+  @apply z-30 BaseSpinner;
+  animation: waves-short 1s linear infinite;
 }
