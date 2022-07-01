@@ -11,7 +11,7 @@
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     .ModalContainer {
-      @apply rounded-md  backdrop-blur-[2px] bg-app-gray-230-50;
+      @apply rounded-md  backdrop-blur-[2px] bg-app-gray-235-50;
     }
   }
 }
