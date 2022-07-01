@@ -13,7 +13,7 @@ export type CardProps = {
 export function FloatCard(props: CardProps) {
   let [local, rest] = splitProps(props, ["class", "children"]);
   return (
-    <Box class={`${style.FloatCard} ${local.class} relative`} {...rest}>
+    <Box class={`${style.FloatCard} ${local.class}`} {...rest}>
       {local.children}
     </Box>
   );
@@ -22,7 +22,7 @@ export function FloatCard(props: CardProps) {
 export function RaisedCard(props: CardProps) {
   let [local, rest] = splitProps(props, ["class", "children"]);
   return (
-    <Box class={`${style.RaisedCard} ${local.class} relative`} {...rest}>
+    <Box class={`${style.RaisedCard} ${local.class}`} {...rest}>
       {local.children}
     </Box>
   );
@@ -31,7 +31,7 @@ export function RaisedCard(props: CardProps) {
 export function ShallowCard(props: CardProps) {
   let [local, rest] = splitProps(props, ["class", "children"]);
   return (
-    <Box class={`${style.ShallowCard} ${local.class} relative`} {...rest}>
+    <Box class={`${style.ShallowCard} ${local.class} `} {...rest}>
       {local.children}
     </Box>
   );

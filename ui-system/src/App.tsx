@@ -4,7 +4,7 @@ import {
   // Button,
   Center,
   VStack,
-  // FlatButton,
+  FlatButton,
   // Card,
   // ButtonShallow,
   RaisedCard,
@@ -23,7 +23,16 @@ const App: Component = () => {
     <>
       <Center class="h-full w-full text-app-gray-050 p-2">
         <VStack class="gap-20 items-center">
-          <RaisedCard class="h-[3.2rem] w-[6.4rem]" />
+          <RaisedCard class="min-h-[5rem] min-w-[10rem] p-4 ">
+            <Center class="h-full w-full gap-2">
+              <FlatButton id="AAA" class="px-[2rem] py-[0.8rem]">
+                <Text class="uppercase">Flat</Text>
+              </FlatButton>
+              <FlatButton id="AAA" class="px-[2rem] py-[0.8rem]">
+                <Text class="uppercase">Flat 2</Text>
+              </FlatButton>
+            </Center>
+          </RaisedCard>
           <ShallowCard class="h-32 w-64" />
           <RaisedCard class="h-32 w-64" />
           {/* <Center>
@@ -76,8 +85,8 @@ const App: Component = () => {
           >
             <CloseIcon />
           </button> */}
-            <Text>
-              <p>
+            <p>
+              <Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Adipiscing tristique risus nec feugiat in fermentum posuere.
@@ -99,8 +108,10 @@ const App: Component = () => {
                 id diam vel. Vitae elementum curabitur vitae nunc sed velit
                 dignissim sodales. Tortor at auctor urna nunc id cursus. Blandit
                 massa enim nec dui nunc mattis.
-              </p>
-              <p>
+              </Text>
+            </p>
+            <p>
+              <Text>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Adipiscing tristique risus nec feugiat in fermentum posuere.
@@ -122,8 +133,8 @@ const App: Component = () => {
                 id diam vel. Vitae elementum curabitur vitae nunc sed velit
                 dignissim sodales. Tortor at auctor urna nunc id cursus. Blandit
                 massa enim nec dui nunc mattis.
-              </p>
-            </Text>
+              </Text>
+            </p>
           </VStack>
         }
       >

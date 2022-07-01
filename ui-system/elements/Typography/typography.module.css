@@ -1,0 +1,3 @@
+.NormalText {
+  @apply text-[1.6rem] h-full w-full;
+}
