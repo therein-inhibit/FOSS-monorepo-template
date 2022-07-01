@@ -22,7 +22,7 @@ const App: Component = () => {
       <Center class="h-full w-full bg-app-gray-235 text-app-gray-050 p-2">
         <VStack class="gap-20 items-center">
           <Bar class="gap-10 px-4 py-2 rounded-md">
-            <ButtonShallow
+            {/* <ButtonShallow
               class="py-1.5 px-3"
               variante="shallow"
               onClick={(evt) => {
@@ -30,8 +30,8 @@ const App: Component = () => {
               }}
             >
               shallow
-            </ButtonShallow>
-            <FlatButton
+            </ButtonShallow> */}
+            {/* <FlatButton
               class="py-1.5 px-3"
               onClick={(evt) => {
                 // console.log("flat btn clicked", evt);
@@ -46,21 +46,21 @@ const App: Component = () => {
               }}
             >
               flat 2
-            </FlatButton>
+            </FlatButton> */}
           </Bar>
           <Center>
             <Spinner />
           </Center>
-          <Button
+          {/* <Button
             class="p-3"
             onClick={(evt) => {
               // console.log("raised btn clicked", evt);
             }}
           >
             raised
-          </Button>
+          </Button> */}
 
-          <FlatButton
+          {/* <FlatButton
             class="p-3"
             onClick={() => {
               let [_, set] = Modal.signal;
@@ -68,8 +68,8 @@ const App: Component = () => {
             }}
           >
             OpenModal
-          </FlatButton>
-          <Box>
+          </FlatButton> */}
+          {/* <Box>
             <Button class="h-16 w-16 p-[170px]">Back</Button>
           </Box>
           <Box>
@@ -77,7 +77,7 @@ const App: Component = () => {
           </Box>
           <Box>
             <Button class="h-16 w-16 p-[170px]">Back</Button>
-          </Box>
+          </Box> */}
           {/* <CircleButton> </CircleButton> */}
         </VStack>
       </Center>
