@@ -1,16 +1,18 @@
 import { Component, createEffect } from "solid-js";
 import {
   Box,
-  Button,
+  // Button,
   Center,
   VStack,
-  FlatButton,
-  Card,
-  ButtonShallow,
-  Bar,
+  // FlatButton,
+  // Card,
+  // ButtonShallow,
+  RaisedCard,
   Spinner,
   Modal,
-  CloseButton,
+  ShallowCard,
+  Text,
+  // CloseButton,
 } from "ui-system";
 import { range } from "lib";
 import { Close as CloseIcon } from "ui-system/icons";
@@ -19,38 +21,14 @@ import { Close as CloseIcon } from "ui-system/icons";
 const App: Component = () => {
   return (
     <>
-      <Center class="h-full w-full  text-app-gray-050 p-2">
+      <Center class="h-full w-full text-app-gray-050 p-2">
         <VStack class="gap-20 items-center">
-          <Bar class="gap-10 px-4 py-2 rounded-md">
-            {/* <ButtonShallow
-              class="py-1.5 px-3"
-              variante="shallow"
-              onClick={(evt) => {
-                // console.log("shallow btn clicked", evt);
-              }}
-            >
-              shallow
-            </ButtonShallow> */}
-            {/* <FlatButton
-              class="py-1.5 px-3"
-              onClick={(evt) => {
-                // console.log("flat btn clicked", evt);
-              }}
-            >
-              flat 1
-            </FlatButton>
-            <FlatButton
-              class="py-1.5 px-3"
-              onClick={(evt) => {
-                // console.log("flat btn clicked", evt);
-              }}
-            >
-              flat 2
-            </FlatButton> */}
-          </Bar>
-          <Center>
+          <RaisedCard class="h-[3.2rem] w-[6.4rem]" />
+          <ShallowCard class="h-32 w-64" />
+          <RaisedCard class="h-32 w-64" />
+          {/* <Center>
             <Spinner />
-          </Center>
+          </Center> */}
           {/* <Button
             class="p-3"
             onClick={(evt) => {
@@ -83,7 +61,7 @@ const App: Component = () => {
       </Center>
 
       <Modal
-        class="h-[34rem] w-[34rem]"
+        class="h-[50rem] w-[50rem]"
         body={
           <VStack>
             {/* <CloseButton
@@ -98,50 +76,54 @@ const App: Component = () => {
           >
             <CloseIcon />
           </button> */}
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Adipiscing tristique risus nec feugiat in fermentum posuere. Nibh
-              ipsum consequat nisl vel pretium lectus quam id leo. Sollicitudin
-              ac orci phasellus egestas tellus rutrum tellus. Ut ornare lectus
-              sit amet est placerat in egestas. Nibh sit amet commodo nulla
-              facilisi nullam vehicula ipsum. Mi tempus imperdiet nulla
-              malesuada pellentesque elit eget gravida. Est ante in nibh mauris
-              cursus mattis molestie a. Nunc mi ipsum faucibus vitae aliquet nec
-              ullamcorper sit amet. Metus dictum at tempor commodo ullamcorper a
-              lacus. Sed ullamcorper morbi tincidunt ornare massa eget egestas
-              purus. Gravida neque convallis a cras semper auctor neque vitae.
-              In nisl nisi scelerisque eu ultrices. Tempor id eu nisl nunc mi
-              ipsum faucibus vitae aliquet. Adipiscing elit duis tristique
-              sollicitudin. Sed velit dignissim sodales ut eu. Ipsum nunc
-              aliquet bibendum enim facilisis. Ut eu sem integer vitae justo
-              eget. Nec tincidunt praesent semper feugiat. Varius quam quisque
-              id diam vel. Vitae elementum curabitur vitae nunc sed velit
-              dignissim sodales. Tortor at auctor urna nunc id cursus. Blandit
-              massa enim nec dui nunc mattis.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Adipiscing tristique risus nec feugiat in fermentum posuere. Nibh
-              ipsum consequat nisl vel pretium lectus quam id leo. Sollicitudin
-              ac orci phasellus egestas tellus rutrum tellus. Ut ornare lectus
-              sit amet est placerat in egestas. Nibh sit amet commodo nulla
-              facilisi nullam vehicula ipsum. Mi tempus imperdiet nulla
-              malesuada pellentesque elit eget gravida. Est ante in nibh mauris
-              cursus mattis molestie a. Nunc mi ipsum faucibus vitae aliquet nec
-              ullamcorper sit amet. Metus dictum at tempor commodo ullamcorper a
-              lacus. Sed ullamcorper morbi tincidunt ornare massa eget egestas
-              purus. Gravida neque convallis a cras semper auctor neque vitae.
-              In nisl nisi scelerisque eu ultrices. Tempor id eu nisl nunc mi
-              ipsum faucibus vitae aliquet. Adipiscing elit duis tristique
-              sollicitudin. Sed velit dignissim sodales ut eu. Ipsum nunc
-              aliquet bibendum enim facilisis. Ut eu sem integer vitae justo
-              eget. Nec tincidunt praesent semper feugiat. Varius quam quisque
-              id diam vel. Vitae elementum curabitur vitae nunc sed velit
-              dignissim sodales. Tortor at auctor urna nunc id cursus. Blandit
-              massa enim nec dui nunc mattis.
-            </p>
+            <Text>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Adipiscing tristique risus nec feugiat in fermentum posuere.
+                Nibh ipsum consequat nisl vel pretium lectus quam id leo.
+                Sollicitudin ac orci phasellus egestas tellus rutrum tellus. Ut
+                ornare lectus sit amet est placerat in egestas. Nibh sit amet
+                commodo nulla facilisi nullam vehicula ipsum. Mi tempus
+                imperdiet nulla malesuada pellentesque elit eget gravida. Est
+                ante in nibh mauris cursus mattis molestie a. Nunc mi ipsum
+                faucibus vitae aliquet nec ullamcorper sit amet. Metus dictum at
+                tempor commodo ullamcorper a lacus. Sed ullamcorper morbi
+                tincidunt ornare massa eget egestas purus. Gravida neque
+                convallis a cras semper auctor neque vitae. In nisl nisi
+                scelerisque eu ultrices. Tempor id eu nisl nunc mi ipsum
+                faucibus vitae aliquet. Adipiscing elit duis tristique
+                sollicitudin. Sed velit dignissim sodales ut eu. Ipsum nunc
+                aliquet bibendum enim facilisis. Ut eu sem integer vitae justo
+                eget. Nec tincidunt praesent semper feugiat. Varius quam quisque
+                id diam vel. Vitae elementum curabitur vitae nunc sed velit
+                dignissim sodales. Tortor at auctor urna nunc id cursus. Blandit
+                massa enim nec dui nunc mattis.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Adipiscing tristique risus nec feugiat in fermentum posuere.
+                Nibh ipsum consequat nisl vel pretium lectus quam id leo.
+                Sollicitudin ac orci phasellus egestas tellus rutrum tellus. Ut
+                ornare lectus sit amet est placerat in egestas. Nibh sit amet
+                commodo nulla facilisi nullam vehicula ipsum. Mi tempus
+                imperdiet nulla malesuada pellentesque elit eget gravida. Est
+                ante in nibh mauris cursus mattis molestie a. Nunc mi ipsum
+                faucibus vitae aliquet nec ullamcorper sit amet. Metus dictum at
+                tempor commodo ullamcorper a lacus. Sed ullamcorper morbi
+                tincidunt ornare massa eget egestas purus. Gravida neque
+                convallis a cras semper auctor neque vitae. In nisl nisi
+                scelerisque eu ultrices. Tempor id eu nisl nunc mi ipsum
+                faucibus vitae aliquet. Adipiscing elit duis tristique
+                sollicitudin. Sed velit dignissim sodales ut eu. Ipsum nunc
+                aliquet bibendum enim facilisis. Ut eu sem integer vitae justo
+                eget. Nec tincidunt praesent semper feugiat. Varius quam quisque
+                id diam vel. Vitae elementum curabitur vitae nunc sed velit
+                dignissim sodales. Tortor at auctor urna nunc id cursus. Blandit
+                massa enim nec dui nunc mattis.
+              </p>
+            </Text>
           </VStack>
         }
       >

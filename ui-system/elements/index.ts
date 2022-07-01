@@ -1,7 +1,5 @@
-// TODO: write elemets of the ui-system
-
-export * from "ui-system/elements/Button";
-export * from "ui-system/elements/Bar";
-// export * from "ui-system/elements/Loader";
-export * from "ui-system/elements/Spinner";
-export * from "ui-system/elements/Card";
+export * from "./Button";
+export * from "./Loader";
+export * from "./Spinner";
+export * from "./Card";
+export * from "./Typography";
