@@ -26,10 +26,10 @@ const App: Component = () => {
           <RaisedCard class="min-h-[5rem] min-w-[10rem] p-4 ">
             <Center class="h-full w-full gap-2">
               <FlatButton id="AAA" class="px-[2rem] py-[0.8rem]">
-                <Text class="uppercase">Flat</Text>
+                Flat
               </FlatButton>
               <FlatButton id="AAA" class="px-[2rem] py-[0.8rem]">
-                <Text class="uppercase">Flat 2</Text>
+                Flat 2
               </FlatButton>
             </Center>
           </RaisedCard>
@@ -73,7 +73,7 @@ const App: Component = () => {
       </Center>
 
       <Modal
-        class="h-[50rem] w-[50rem]"
+        class="h-[32rem] w-[32rem]"
         body={
           <VStack>
             {/* <CloseButton
@@ -89,54 +89,48 @@ const App: Component = () => {
             <CloseIcon />
           </button> */}
             <p>
-              <Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Adipiscing tristique risus nec feugiat in fermentum posuere.
-                Nibh ipsum consequat nisl vel pretium lectus quam id leo.
-                Sollicitudin ac orci phasellus egestas tellus rutrum tellus. Ut
-                ornare lectus sit amet est placerat in egestas. Nibh sit amet
-                commodo nulla facilisi nullam vehicula ipsum. Mi tempus
-                imperdiet nulla malesuada pellentesque elit eget gravida. Est
-                ante in nibh mauris cursus mattis molestie a. Nunc mi ipsum
-                faucibus vitae aliquet nec ullamcorper sit amet. Metus dictum at
-                tempor commodo ullamcorper a lacus. Sed ullamcorper morbi
-                tincidunt ornare massa eget egestas purus. Gravida neque
-                convallis a cras semper auctor neque vitae. In nisl nisi
-                scelerisque eu ultrices. Tempor id eu nisl nunc mi ipsum
-                faucibus vitae aliquet. Adipiscing elit duis tristique
-                sollicitudin. Sed velit dignissim sodales ut eu. Ipsum nunc
-                aliquet bibendum enim facilisis. Ut eu sem integer vitae justo
-                eget. Nec tincidunt praesent semper feugiat. Varius quam quisque
-                id diam vel. Vitae elementum curabitur vitae nunc sed velit
-                dignissim sodales. Tortor at auctor urna nunc id cursus. Blandit
-                massa enim nec dui nunc mattis.
-              </Text>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Adipiscing tristique risus nec feugiat in fermentum posuere. Nibh
+              ipsum consequat nisl vel pretium lectus quam id leo. Sollicitudin
+              ac orci phasellus egestas tellus rutrum tellus. Ut ornare lectus
+              sit amet est placerat in egestas. Nibh sit amet commodo nulla
+              facilisi nullam vehicula ipsum. Mi tempus imperdiet nulla
+              malesuada pellentesque elit eget gravida. Est ante in nibh mauris
+              cursus mattis molestie a. Nunc mi ipsum faucibus vitae aliquet nec
+              ullamcorper sit amet. Metus dictum at tempor commodo ullamcorper a
+              lacus. Sed ullamcorper morbi tincidunt ornare massa eget egestas
+              purus. Gravida neque convallis a cras semper auctor neque vitae.
+              In nisl nisi scelerisque eu ultrices. Tempor id eu nisl nunc mi
+              ipsum faucibus vitae aliquet. Adipiscing elit duis tristique
+              sollicitudin. Sed velit dignissim sodales ut eu. Ipsum nunc
+              aliquet bibendum enim facilisis. Ut eu sem integer vitae justo
+              eget. Nec tincidunt praesent semper feugiat. Varius quam quisque
+              id diam vel. Vitae elementum curabitur vitae nunc sed velit
+              dignissim sodales. Tortor at auctor urna nunc id cursus. Blandit
+              massa enim nec dui nunc mattis.
             </p>
             <p>
-              <Text>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Adipiscing tristique risus nec feugiat in fermentum posuere.
-                Nibh ipsum consequat nisl vel pretium lectus quam id leo.
-                Sollicitudin ac orci phasellus egestas tellus rutrum tellus. Ut
-                ornare lectus sit amet est placerat in egestas. Nibh sit amet
-                commodo nulla facilisi nullam vehicula ipsum. Mi tempus
-                imperdiet nulla malesuada pellentesque elit eget gravida. Est
-                ante in nibh mauris cursus mattis molestie a. Nunc mi ipsum
-                faucibus vitae aliquet nec ullamcorper sit amet. Metus dictum at
-                tempor commodo ullamcorper a lacus. Sed ullamcorper morbi
-                tincidunt ornare massa eget egestas purus. Gravida neque
-                convallis a cras semper auctor neque vitae. In nisl nisi
-                scelerisque eu ultrices. Tempor id eu nisl nunc mi ipsum
-                faucibus vitae aliquet. Adipiscing elit duis tristique
-                sollicitudin. Sed velit dignissim sodales ut eu. Ipsum nunc
-                aliquet bibendum enim facilisis. Ut eu sem integer vitae justo
-                eget. Nec tincidunt praesent semper feugiat. Varius quam quisque
-                id diam vel. Vitae elementum curabitur vitae nunc sed velit
-                dignissim sodales. Tortor at auctor urna nunc id cursus. Blandit
-                massa enim nec dui nunc mattis.
-              </Text>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Adipiscing tristique risus nec feugiat in fermentum posuere. Nibh
+              ipsum consequat nisl vel pretium lectus quam id leo. Sollicitudin
+              ac orci phasellus egestas tellus rutrum tellus. Ut ornare lectus
+              sit amet est placerat in egestas. Nibh sit amet commodo nulla
+              facilisi nullam vehicula ipsum. Mi tempus imperdiet nulla
+              malesuada pellentesque elit eget gravida. Est ante in nibh mauris
+              cursus mattis molestie a. Nunc mi ipsum faucibus vitae aliquet nec
+              ullamcorper sit amet. Metus dictum at tempor commodo ullamcorper a
+              lacus. Sed ullamcorper morbi tincidunt ornare massa eget egestas
+              purus. Gravida neque convallis a cras semper auctor neque vitae.
+              In nisl nisi scelerisque eu ultrices. Tempor id eu nisl nunc mi
+              ipsum faucibus vitae aliquet. Adipiscing elit duis tristique
+              sollicitudin. Sed velit dignissim sodales ut eu. Ipsum nunc
+              aliquet bibendum enim facilisis. Ut eu sem integer vitae justo
+              eget. Nec tincidunt praesent semper feugiat. Varius quam quisque
+              id diam vel. Vitae elementum curabitur vitae nunc sed velit
+              dignissim sodales. Tortor at auctor urna nunc id cursus. Blandit
+              massa enim nec dui nunc mattis.
             </p>
           </VStack>
         }

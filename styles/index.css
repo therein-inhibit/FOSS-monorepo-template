@@ -27,7 +27,7 @@ body {
     - if a user changes its font size from default 16px to 20px, all elements will
       scale accordanly if using rem as unit
   */
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
   height: 100vh;
   width: 100vw;
   @apply bg-app-gray-235;
