@@ -48,6 +48,7 @@
 
 .SpinnerWaveShort {
   @apply z-30 BaseSpinner;
+  /* animation: waves-short 1s cubic-bezier(0.5, 1, 0.5, -0.5) infinite; */
   animation: waves-short 1s linear infinite;
 }
 

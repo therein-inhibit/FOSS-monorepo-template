@@ -33,7 +33,7 @@ const App: Component = () => {
           </RaisedCard>
           <ShallowCard class="h-32 w-64" />
           <RaisedCard class="h-32 w-64" />
-          <Center class="mt-[5rem]">
+          <Center class="mt-14">
             <Spinner />
           </Center>
           {/* <Center>
