@@ -22,16 +22,14 @@ const App: Component = () => {
   return (
     <>
       <Center class="h-full w-full text-app-gray-050 p-2">
-        <VStack class="gap-20 items-center">
-          <RaisedCard class="min-h-[5rem] min-w-[10rem] p-4 ">
-            <Center class="h-full w-full gap-2">
-              <FlatButton id="AAA" class="px-[2rem] py-[0.8rem]">
-                Flat
-              </FlatButton>
-              <FlatButton id="AAA" class="px-[2rem] py-[0.8rem]">
-                Flat 2
-              </FlatButton>
-            </Center>
+        <VStack class="gap-20 items-center mt-4">
+          <RaisedCard class="p-3 gap-2">
+            <FlatButton id="AAA" class="p-2">
+              <Center class="w-16">Flat</Center>
+            </FlatButton>
+            <FlatButton id="AAA" class="p-2">
+              <Center class="w-16">Flat 2</Center>
+            </FlatButton>
           </RaisedCard>
           <ShallowCard class="h-32 w-64" />
           <RaisedCard class="h-32 w-64" />

@@ -8,7 +8,7 @@ export function FlatButton({
   ...rest
 }: JSX.ButtonHTMLAttributes<HTMLButtonElement>): JSX.Element {
   return (
-    <button type="button" class={`${styles.FlattenButton} ${klass}`} {...rest}>
+    <button type="button" class={`${klass} ${styles.FlattenButton} `} {...rest}>
       {children}
     </button>
   );

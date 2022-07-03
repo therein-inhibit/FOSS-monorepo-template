@@ -27,12 +27,12 @@
 
 .FlattenButton {
   @apply BaseButton;
-  @apply border;
-  @apply hover:bg-app-gray-215;
+  @apply bg-app-gray-215;
+  @apply hover:bg-app-gray-200;
 
   /* animation */
   transition: background 1s;
-  @apply active:bg-app-gray-200 active:transition-none;
+  @apply active:bg-app-gray-185 active:transition-none;
 }
 
 .BaseCircleButton {
