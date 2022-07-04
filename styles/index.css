@@ -7,14 +7,15 @@
 @layer components {
   .app-light-shallow {
     @apply bg-app-gray-230;
-    box-shadow: inset 5px 5px 9px var(--app-gray-200),
-      inset -5px -5px 9px var(--app-gray-255);
+    box-shadow: inset -7px -7px 9px var(--app-gray-255),
+      inset 7px 7px 9px var(--app-gray-195);
   }
 
   .app-light-raised {
     @apply bg-app-gray-230;
-    box-shadow: 5px 5px 9px var(--app-gray-200),
-      -5px -5px 9px var(--app-gray-255);
+
+    box-shadow: 7px 7px 9px var(--app-gray-195),
+      -7px -7px 9px var(--app-gray-255);
   }
 }
 

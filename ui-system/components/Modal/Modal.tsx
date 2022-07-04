@@ -17,8 +17,8 @@ export type ModalProps = {
   footer?: JSX.Element;
 } & Record<string, unknown>;
 
-// let signal = createSignal(false);
-let signal = createSignal(true);
+let signal = createSignal(false);
+// let signal = createSignal(true);
 let [_, addOverlay] = Overlay.signal;
 
 let [modalState, setModalState] = signal;
