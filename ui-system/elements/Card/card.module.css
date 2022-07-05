@@ -41,7 +41,7 @@
 }
 
 .ShallowCard {
-  @apply BaseCard_sm Center;
+  @apply BaseCard_md Center;
   @apply bg-app-gray-230;
 }
 

@@ -80,6 +80,7 @@ function createShallowCardContainer(
         style={{
           height: height(),
           width: width(),
+          "border-radius": `${0.375 - 2 * 0.0625}rem`,
           "z-index": 1,
         }}
       >
