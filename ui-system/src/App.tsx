@@ -27,7 +27,7 @@ const App: Component = () => {
         <VStack class="gap-20 items-center mt-4">
           {/* <RaisedCard class="h-[64px] w-[192px]"> */}
           <RaisedCard class="rounded-md">
-            <HStack class="gap-2 m-2">
+            <HStack class="gap-2 m-1">
               <ShallowCard class="w-16 h-fit rounded-sm">btn</ShallowCard>
               <Center class="w-16 h-fit rounded-sm">btn 2</Center>
               {/* <FlatButton id="AAA" class="p-2">

@@ -1,11 +1,23 @@
 @import "ui-system/containers/styles.module.css";
 
-.BaseCard {
+.BaseCard_sm {
   @apply flex min-h-[0.5rem] min-w-[0.5rem] rounded-sm;
 }
 
+.BaseCard_md {
+  @apply flex min-h-[0.5rem] min-w-[0.5rem] rounded-md;
+}
+
+.BaseCard_lg {
+  @apply flex min-h-[0.5rem] min-w-[0.5rem] rounded-lg;
+}
+
+.BaseCard_full {
+  @apply flex min-h-[0.5rem] min-w-[0.5rem] rounded-full;
+}
+
 .FloatCard {
-  @apply BaseCard Center;
+  @apply BaseCard_md Center;
   @apply backdrop-blur-[2px] bg-app-gray-250-70;
   box-shadow: 8px 8px 10px 0 var(--app-gray-030-30);
   border: 1px solid var(--app-gray-255-20);
@@ -13,12 +25,12 @@
 }
 
 .RaisedCard {
-  @apply BaseCard Center;
+  @apply BaseCard_md Center;
   @apply bg-app-gray-235;
 }
 
 .HighRaisedCard {
-  @apply BaseCard Center;
+  @apply BaseCard_md Center;
   @apply bg-app-gray-230;
   @apply app-light-raised;
 
@@ -29,20 +41,20 @@
 }
 
 .ShallowCard {
-  @apply BaseCard Center;
+  @apply BaseCard_sm Center;
   @apply bg-app-gray-230;
 }
 
 .DeepShallowCard {
-  @apply BaseCard Center;
+  @apply BaseCard_md Center;
   @apply bg-app-gray-230;
   @apply app-light-shallow;
 }
 
 .CardRaisedGradient {
-  @apply BaseCard Center;
+  @apply BaseCard_md Center;
 }
 
 .CardShallowGradient {
-  @apply BaseCard Center;
+  @apply BaseCard_md Center;
 }
