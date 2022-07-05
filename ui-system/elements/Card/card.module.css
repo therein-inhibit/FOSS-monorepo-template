@@ -15,14 +15,23 @@
 .RaisedCard {
   @apply BaseCard Center;
   @apply bg-app-gray-230;
+}
+
+.HighRaisedCard {
+  @apply BaseCard Center;
+  @apply bg-app-gray-230;
   @apply app-light-raised;
 }
 
 .ShallowCard {
   @apply BaseCard Center;
   @apply bg-app-gray-230;
+}
 
-  /* @apply app-light-shallow; */
+.DeepShallowCard {
+  @apply BaseCard Center;
+  @apply bg-app-gray-230;
+  @apply app-light-shallow;
 }
 
 .CardRaisedGradient {

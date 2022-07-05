@@ -11,9 +11,9 @@ import {
   Spinner,
   Modal,
   ShallowCard,
-  CardRaisedGradient,
-  CardShallowGradient,
+  RaisedCard2,
   Text,
+  HStack,
   // CloseButton,
 } from "ui-system";
 import { range } from "lib";
@@ -33,26 +33,31 @@ const App: Component = () => {
               <Center class="w-16">Flat 2</Center>
             </FlatButton>
           </RaisedCard>
-          <CardShallowGradient class="h-32 w-32">Border</CardShallowGradient>
-          <ShallowCard class="h-32 w-32" />
+          <HStack class="gap-4">
+            <ShallowCard class="h-32 w-32" deep />
+            <ShallowCard class="h-32 w-32" />
 
-          <CardShallowGradient class="h-64 w-8">Border</CardShallowGradient>
-          <ShallowCard class="h-64 w-8" />
+            <ShallowCard class="h-64 w-8" deep />
+            <ShallowCard class="h-64 w-8" />
 
-          <CardShallowGradient class="h-8 w-64">Border</CardShallowGradient>
-          <ShallowCard class="h-8 w-64" />
+            <VStack class="gap-4">
+              <ShallowCard class="h-8 w-64" deep />
+              <ShallowCard class="h-8 w-64" />
+            </VStack>
+          </HStack>
+          <HStack class="gap-4">
+            <RaisedCard2 class="h-32 w-32" deep />
+            <RaisedCard2 class="h-32 w-32" />
 
-          <CardRaisedGradient class="h-32 w-64">
-            <RaisedCard class="h-[7.75rem] w-[15.75rem]" />
-          </CardRaisedGradient>
+            <RaisedCard2 class="h-64 w-8" deep />
+            <RaisedCard2 class="h-64 w-8" />
 
-          <CardRaisedGradient class="h-64 w-32">
-            <RaisedCard class="h-[15.75rem] w-[7.75rem]" />
-          </CardRaisedGradient>
+            <VStack class="gap-4">
+              <RaisedCard2 class="h-8 w-64" deep />
+              <RaisedCard2 class="h-8 w-64" />
+            </VStack>
+          </HStack>
 
-          <ShallowCard class="h-32 w-64" />
-
-          <RaisedCard class="h-32 w-64" />
           <Center class="mt-14">
             <Spinner />
           </Center>
