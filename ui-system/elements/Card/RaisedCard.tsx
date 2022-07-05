@@ -1,11 +1,13 @@
-import { Accessor, createEffect, createSignal, JSX } from "solid-js";
+import { Accessor, createEffect, createSignal, JSX, onMount } from "solid-js";
 import { splitProps } from "solid-js";
 
 import type { CardProps } from "./types";
 
+import { Box } from "ui-system";
+
 import style from "./card.module.css";
 
-export function RaisedCard2(props: CardProps & { deep?: boolean }) {
+export function RaisedCard(props: CardProps & { raised?: boolean }) {
   let borderWidth = 3;
 
   let [childHeight, setChildHeight] = createSignal("100%");
@@ -13,7 +15,7 @@ export function RaisedCard2(props: CardProps & { deep?: boolean }) {
   let [gradientAngle, setGradientAngle] = createSignal(135);
   let [fixConstant, setFixConstant] = createSignal(0);
 
-  let Wrapper = createShallowCardContainer(
+  let Container = createRaisedCardContainer(
     props,
     childHeight,
     childWidth,
@@ -21,47 +23,72 @@ export function RaisedCard2(props: CardProps & { deep?: boolean }) {
     fixConstant
   );
 
-  createEffect(() => {
-    setFixConstant(
-      computeFix(Wrapper.clientHeight, Wrapper.clientWidth, borderWidth)
+  onMount(() => {
+    Container.style.setProperty(
+      "height",
+      fromPXtoREM(Container.clientHeight + borderWidth)
     );
-
-    setGradientAngle(
-      computeAngleInDegrees(
-        Wrapper.clientHeight - borderWidth,
-        Wrapper.clientWidth - borderWidth,
-        fixConstant()
-      )
+    Container.style.setProperty(
+      "width",
+      fromPXtoREM(Container.clientWidth + borderWidth)
     );
-    // setting the inner div height 2px smaller but in REM
-    // if user changes the default font size this will scale
-    setChildHeight(`${fromPXtoREM(Wrapper.clientHeight - borderWidth)}`);
-    setChildWidth(`${fromPXtoREM(Wrapper.clientWidth - borderWidth)}`);
   });
 
-  return Wrapper;
+  createEffect(() => {
+    setFixConstant(
+      computeFix(Container.clientHeight, Container.clientWidth, borderWidth)
+    );
+
+    let height = Container.clientHeight - borderWidth;
+    let width = Container.clientWidth - borderWidth;
+
+    setGradientAngle(computeAngleInDegrees(height, width, fixConstant()));
+
+    // let height = fromPXtoREM(Container.clientHeight - borderWidth);
+    // let width = fromPXtoREM(width);
+
+    // console.log(
+    //   "___!!!___",
+    //   [childHeight(), height, fromPXtoREM(Container.clientHeight)],
+    //   [childWidth(), width, fromPXtoREM(Container.clientWidth)]
+    // );
+
+    // setting the inner div height 2px smaller but in REM
+    // if user changes the default font size this will scale
+    setChildHeight(fromPXtoREM(height));
+    setChildWidth(fromPXtoREM(width));
+  });
+
+  // return Container;
+
+  return <Box class={props.class}>{Container}</Box>;
 }
 
-function createShallowCardContainer(
+function createRaisedCardContainer(
   props: CardProps,
   height: Accessor<string>,
   width: Accessor<string>,
   gradientAngle: Accessor<number>,
   fixConstant: Accessor<number>
 ): HTMLDivElement {
-  let [local, rest] = splitProps(props, ["class", "children", "style", "deep"]);
+  let [local, rest] = splitProps(props, [
+    "class",
+    "children",
+    "style",
+    "raised",
+  ]);
 
   return (
     <div
-      class={`${style.CardShallowGradient} ${local.class || ""} `}
+      class={`${style.CardRaisedGradient} h-full w-full`}
       style={{
         ...(local.style as JSX.CSSProperties),
-        background: createShallowBackgroundGradient(gradientAngle, fixConstant),
+        background: createRaisedBackgroundGradient(gradientAngle, fixConstant),
       }}
       {...rest}
     >
       <div
-        class={`${local.deep ? style.HighRaisedCard : style.RaisedCard}`}
+        class={`${local.raised ? style.HighRaisedCard : style.RaisedCard}`}
         style={{
           height: height(),
           width: width(),
@@ -74,7 +101,7 @@ function createShallowCardContainer(
   ) as HTMLDivElement;
 }
 
-function createShallowBackgroundGradient(
+function createRaisedBackgroundGradient(
   angle: Accessor<number>,
   fix: Accessor<number>
 ) {

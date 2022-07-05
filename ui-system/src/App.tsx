@@ -7,11 +7,11 @@ import {
   FlatButton,
   // Card,
   // ButtonShallow,
-  RaisedCard,
+  // RaisedCard,
   Spinner,
   Modal,
   ShallowCard,
-  RaisedCard2,
+  RaisedCard,
   Text,
   HStack,
   // CloseButton,
@@ -25,42 +25,47 @@ const App: Component = () => {
     <>
       <Center class="h-full w-full text-app-gray-050 p-2">
         <VStack class="gap-20 items-center mt-4">
-          <RaisedCard class="p-3 gap-2">
-            <FlatButton id="AAA" class="p-2">
-              <Center class="w-16">Flat</Center>
-            </FlatButton>
-            <FlatButton id="AAA" class="p-2">
-              <Center class="w-16">Flat 2</Center>
-            </FlatButton>
+          {/* <RaisedCard class="h-[64px] w-[192px]"> */}
+          <RaisedCard class="rounded-md">
+            <HStack class="gap-2 m-2">
+              <ShallowCard class="w-16 h-fit rounded-sm">btn</ShallowCard>
+              <Center class="w-16 h-fit rounded-sm">btn 2</Center>
+              {/* <FlatButton id="AAA" class="p-2">
+                <Center class="w-16">Flat</Center>
+              </FlatButton>
+              <FlatButton id="AAA" class="p-2">
+                <Center class="w-16">Flat 2</Center>
+              </FlatButton> */}
+            </HStack>
           </RaisedCard>
           <HStack class="gap-4">
-            <ShallowCard class="h-32 w-32" deep />
+            <ShallowCard class="h-32 w-32" shallow />
             <ShallowCard class="h-32 w-32" />
 
-            <ShallowCard class="h-64 w-8" deep />
+            <ShallowCard class="h-64 w-8" shallow />
             <ShallowCard class="h-64 w-8" />
 
             <VStack class="gap-4">
-              <ShallowCard class="h-8 w-64" deep />
+              <ShallowCard class="h-8 w-64" shallow />
               <ShallowCard class="h-8 w-64" />
             </VStack>
           </HStack>
           <HStack class="gap-4">
-            <RaisedCard2 class="h-32 w-32" deep />
-            <RaisedCard2 class="h-32 w-32" />
+            <RaisedCard class="h-32 w-32" raised />
+            <RaisedCard class="h-32 w-32" />
 
-            <RaisedCard2 class="h-64 w-8" deep />
-            <RaisedCard2 class="h-64 w-8" />
+            <RaisedCard class="h-64 w-8" raised />
+            <RaisedCard class="h-64 w-8" />
 
             <VStack class="gap-4">
-              <RaisedCard2 class="h-8 w-64" deep />
-              <RaisedCard2 class="h-8 w-64" />
+              <RaisedCard class="h-8 w-64" raised />
+              <RaisedCard class="h-8 w-64" />
             </VStack>
           </HStack>
 
-          <Center class="mt-14">
+          {/* <Center class="mt-14">
             <Spinner />
-          </Center>
+          </Center> */}
           {/* <Center>
             <Spinner />
           </Center> */}

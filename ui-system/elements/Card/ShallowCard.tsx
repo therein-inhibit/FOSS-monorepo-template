@@ -1,11 +1,12 @@
-import { Accessor, createEffect, createSignal, JSX } from "solid-js";
+import { Accessor, createEffect, createSignal, JSX, onMount } from "solid-js";
 import { splitProps } from "solid-js";
 
 import type { CardProps } from "./types";
+import { Box } from "ui-system";
 
 import style from "./card.module.css";
 
-export function ShallowCard(props: CardProps & { deep?: boolean }) {
+export function ShallowCard(props: CardProps & { shallow?: boolean }) {
   let borderWidth = 3;
 
   let [childHeight, setChildHeight] = createSignal("100%");
@@ -13,7 +14,7 @@ export function ShallowCard(props: CardProps & { deep?: boolean }) {
   let [gradientAngle, setGradientAngle] = createSignal(135);
   let [fixConstant, setFixConstant] = createSignal(0);
 
-  let Wrapper = createShallowCardContainer(
+  let Container = createShallowCardContainer(
     props,
     childHeight,
     childWidth,
@@ -21,25 +22,33 @@ export function ShallowCard(props: CardProps & { deep?: boolean }) {
     fixConstant
   );
 
-  createEffect(() => {
-    setFixConstant(
-      computeFix(Wrapper.clientHeight, Wrapper.clientWidth, borderWidth)
+  onMount(() => {
+    Container.style.setProperty(
+      "height",
+      fromPXtoREM(Container.clientHeight + borderWidth)
     );
-
-    setGradientAngle(
-      computeAngleInDegrees(
-        Wrapper.clientHeight - borderWidth,
-        Wrapper.clientWidth - borderWidth,
-        fixConstant()
-      )
+    Container.style.setProperty(
+      "width",
+      fromPXtoREM(Container.clientWidth + borderWidth)
     );
-    // setting the inner div height 2px smaller but in REM
-    // if user changes the default font size this will scale
-    setChildHeight(`${fromPXtoREM(Wrapper.clientHeight - borderWidth)}`);
-    setChildWidth(`${fromPXtoREM(Wrapper.clientWidth - borderWidth)}`);
   });
 
-  return Wrapper;
+  createEffect(() => {
+    setFixConstant(
+      computeFix(Container.clientHeight, Container.clientWidth, borderWidth)
+    );
+
+    let height = Container.clientHeight - borderWidth;
+    let width = Container.clientWidth - borderWidth;
+
+    setGradientAngle(computeAngleInDegrees(height, width, fixConstant()));
+    // setting the inner div height 2px smaller but in REM
+    // if user changes the default font size this will scale
+    setChildHeight(fromPXtoREM(height));
+    setChildWidth(fromPXtoREM(width));
+  });
+
+  return <Box class={props.class}>{Container}</Box>;
 }
 
 function createShallowCardContainer(
@@ -49,19 +58,25 @@ function createShallowCardContainer(
   gradientAngle: Accessor<number>,
   fixConstant: Accessor<number>
 ): HTMLDivElement {
-  let [local, rest] = splitProps(props, ["class", "children", "style", "deep"]);
+  let [local, rest] = splitProps(props, [
+    "class",
+    "children",
+    "style",
+    "shallow",
+  ]);
 
   return (
     <div
-      class={`${style.CardShallowGradient} ${local.class || ""} `}
+      class={`${style.CardShallowGradient} h-full w-full`}
       style={{
         ...(local.style as JSX.CSSProperties),
+        // "border-radius": "inhe",
         background: createShallowBackgroundGradient(gradientAngle, fixConstant),
       }}
       {...rest}
     >
       <div
-        class={`${local.deep ? style.DeepShallowCard : style.ShallowCard}`}
+        class={`${local.shallow ? style.DeepShallowCard : style.ShallowCard}`}
         style={{
           height: height(),
           width: width(),

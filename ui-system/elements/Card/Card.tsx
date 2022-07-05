@@ -16,20 +16,20 @@ export function FloatCard(props: CardProps) {
   );
 }
 
-export function RaisedCard(props: CardProps) {
-  let [local, rest] = splitProps(props, ["class", "children"]);
-  return (
-    <Box class={`${style.HighRaisedCard} ${local.class}`} {...rest}>
-      {local.children}
-    </Box>
-  );
-}
+// export function RaisedCard(props: CardProps) {
+//   let [local, rest] = splitProps(props, ["class", "children"]);
+//   return (
+//     <Box class={`${style.HighRaisedCard} ${local.class}`} {...rest}>
+//       {local.children}
+//     </Box>
+//   );
+// }
 
-export function CardRaisedGradient(props: CardProps) {
-  let [local, rest] = splitProps(props, ["class", "children"]);
-  return (
-    <Box class={`${style.CardRaisedGradient} ${local.class} `} {...rest}>
-      {local.children}
-    </Box>
-  );
-}
+// export function CardRaisedGradient(props: CardProps) {
+//   let [local, rest] = splitProps(props, ["class", "children"]);
+//   return (
+//     <Box class={`${style.CardRaisedGradient} ${local.class} `} {...rest}>
+//       {local.children}
+//     </Box>
+//   );
+// }
