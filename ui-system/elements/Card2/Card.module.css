@@ -1,78 +1,99 @@
 body {
-  --boder-size: 6;
+  --border-size: 10;
+  --shade-width: 2;
   --pixel-size: calc(1rem / 16);
   --border-width: var(--pixel-size);
-  --border-radius-md: calc(var(--pixel-size) * var(--boder-size));
-  --inner-size: calc(100% - 2 * var(--pixel-size));
+  --border-radius-md: calc(var(--pixel-size) * var(--border-size));
+  /* --inner-size: calc(100% - 2 * var(--pixel-size)); */
   --inner-border-radius: calc(var(--border-radius-md) - var(--border-width));
 }
 
 .BaseCard {
   @apply flex relative;
   border-radius: var(--border-radius-md);
-  border-width: var(--pixel-size);
+  border-width: calc(var(--shade-width) * var(--pixel-size));
 }
 
 .FlatCard {
-  @apply BaseCard border-app-gray-175;
+  @apply BaseCard border-app-gray-130 bg-app-gray-230;
+  border-width: var(--pixel-size);
+  /* transition: all 0.2s linear; */
+  transition: background 0.8s;
+}
+
+.Ripple {
+  transition: background 2s;
+  @apply w-full h-full;
+}
+
+.Ripple:active {
+  @apply bg-app-gray-145;
+  background-size: 100%;
+  transition: background 0s;
 }
 
 .AboveCardBorder {
   @apply BaseCard;
-  @apply border-l-app-gray-255 border-r-app-gray-175;
-  @apply border-t-app-gray-255  border-b-app-gray-175;
+  @apply border-l-app-gray-255 border-r-app-gray-130;
+  @apply border-t-app-gray-255  border-b-app-gray-130;
 }
 
 .BelowCardBorder {
   @apply BaseCard;
-  @apply border-l-app-gray-175  border-r-app-gray-255;
-  @apply border-t-app-gray-175  border-b-app-gray-255;
+  @apply border-l-app-gray-125  border-r-app-gray-255;
+  @apply border-t-app-gray-125  border-b-app-gray-255;
 }
 
-.Corner {
+.CardCorner {
   border-radius: var(--border-radius-md);
-  width: var(--inner-border-radius);
-  height: var(--inner-border-radius);
+  width: calc(var(--shade-width) * var(--inner-border-radius));
+  height: calc(var(--shade-width) * var(--inner-border-radius));
 }
 
-.AboveCorner {
-  @apply Corner;
-  /* right: calc(-1 * var(--pixel-size)); */
-  /* top: calc(-1 * var(--pixel-size)); */
+.AboveCardCorner {
+  @apply CardCorner;
+
   background: linear-gradient(
     135deg,
     var(--app-gray-255) 0%,
     var(--app-gray-230) 50%,
-    var(--app-gray-175) 100%
+    var(--app-gray-075) 100%
   );
 }
 
-.BelowCorner {
-  @apply Corner;
-  /* right: calc(-1 * var(--pixel-size)); */
-  /* top: calc(-1 * var(--pixel-size)); */
+.BelowCardCorner {
+  @apply CardCorner;
+
   background: linear-gradient(
     135deg,
-    var(--app-gray-175) 0%,
+    var(--app-gray-075) 0%,
     var(--app-gray-230) 50%,
     var(--app-gray-255) 100%
   );
 }
 
 .AboveTopRightCorner {
-  @apply absolute right-0 AboveCorner;
+  @apply absolute right-0 AboveCardCorner;
+  right: calc(-1 * var(--shade-width) * var(--pixel-size));
+  top: calc(-1 * var(--shade-width) * var(--pixel-size));
 }
 
 .AboveBottomLeftCorner {
-  @apply absolute bottom-0 AboveCorner;
+  @apply absolute bottom-0 AboveCardCorner;
+  bottom: calc(-1 * var(--shade-width) * var(--pixel-size));
+  left: calc(-1 * var(--shade-width) * var(--pixel-size));
 }
 
 .BelowTopRightCorner {
-  @apply absolute right-0 BelowCorner;
+  @apply absolute right-0 BelowCardCorner;
+  right: calc(-1 * var(--shade-width) * var(--pixel-size));
+  top: calc(-1 * var(--shade-width) * var(--pixel-size));
 }
 
 .BelowBottomLeftCorner {
-  @apply absolute bottom-0 BelowCorner;
+  @apply absolute bottom-0 BelowCardCorner;
+  bottom: calc(-1 * var(--shade-width) * var(--pixel-size));
+  left: calc(-1 * var(--shade-width) * var(--pixel-size));
 }
 
 .Container {
@@ -81,8 +102,7 @@ body {
 
 .Content {
   @apply z-10;
-  width: 100%;
-  height: 100%;
+  @apply w-full h-full border-0;
   border-radius: var(--inner-border-radius);
 }
 

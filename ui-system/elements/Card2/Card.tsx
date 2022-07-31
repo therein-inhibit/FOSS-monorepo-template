@@ -37,7 +37,7 @@ export const Card = ({
       ? styles.AboveTopRightCorner
       : styles.BelowTopRightCorner;
 
-  let cardCorner = () =>
+  let bottomCorner = () =>
     above() === null
       ? styles.FlatCard
       : above()
@@ -75,14 +75,14 @@ export const Card = ({
       }}
     >
       {above() === null ? (
-        children
+        <span class={` ${styles.Ripple}`}>{children}</span>
       ) : (
         <>
           <Center class={styles.Container}>
             <span class={content()}>{children}</span>
           </Center>
           <span class={topCorner()}></span>
-          <span class={cardCorner()}></span>
+          <span class={bottomCorner()}></span>
         </>
       )}
     </div>
