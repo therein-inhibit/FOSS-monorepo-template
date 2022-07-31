@@ -19,6 +19,8 @@ import {
 import { range } from "lib";
 import { Close as CloseIcon } from "ui-system/icons";
 
+import { Button } from "ui-system/elements/Button2";
+
 // TODO: create containers, elements, components and widget
 const App: Component = () => {
   return (
@@ -39,7 +41,8 @@ const App: Component = () => {
             </HStack>
           </RaisedCard>
           <HStack class="gap-4">
-            <ShallowCard class="h-32 w-32" shallow />
+            <Button class="w-64 h-32" />
+            {/* <ShallowCard class="h-32 w-32" shallow />
             <ShallowCard class="h-32 w-32" />
 
             <ShallowCard class="h-64 w-8" shallow />
@@ -60,7 +63,7 @@ const App: Component = () => {
             <VStack class="gap-4">
               <RaisedCard class="h-8 w-64" raised />
               <RaisedCard class="h-8 w-64" />
-            </VStack>
+            </VStack> */}
           </HStack>
 
           {/* <Center class="mt-14">
