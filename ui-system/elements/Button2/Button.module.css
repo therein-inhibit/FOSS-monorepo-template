@@ -1,0 +1,15 @@
+.BaseButton {
+  @apply flex rounded-md;
+}
+
+.AboveButton {
+  @apply BaseButton;
+  @apply bg-app-gray-235;
+  @apply border border-l-white border-t-white border-r-black border-b-black;
+}
+
+.BelowButton {
+  @apply BaseButton;
+  @apply bg-app-gray-225;
+  @apply border border-l-black border-t-black border-r-white border-b-white;
+}
