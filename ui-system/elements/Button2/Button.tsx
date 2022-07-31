@@ -8,7 +8,7 @@ import {
 } from "solid-js";
 
 import styles from "./Button.module.css";
-import { Center, Box } from "ui-system";
+import { Center, Box, Card } from "ui-system";
 
 type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -27,19 +27,7 @@ export const Button = ({
   onMouseOut = noop,
   onMouseEnter = noop,
 }: ButtonProps): JSX.Element => {
-  let [pressedDown, setPressedDown] = createSignal(false);
-
-  let topCorner = () =>
-    pressedDown() ? styles.BelowTopRightCorner : styles.AboveTopRightCorner;
-
-  let bottonCorner = () =>
-    pressedDown() ? styles.BelowBottomLeftCorner : styles.AboveBottomLeftCorner;
-
-  let buttonBorder = () =>
-    pressedDown() ? styles.BelowButtonBorder : styles.AboveButtonBorder;
-
-  let content = () =>
-    pressedDown() ? styles.BellowContent : styles.AboveContent;
+  let [isAbove, setIsAbove] = createSignal(true);
 
   // must detect mouse up to clear the flat state
   // let mouseUpHandler = () => setPressedDown(false);
@@ -50,19 +38,35 @@ export const Button = ({
   // });
 
   return (
-    <button
-      type="button"
-      class={`${buttonBorder()} ${klass}`}
-      onClick={(evt) => {
-        setPressedDown((v) => !v);
-        (onClick as JSX.EventHandler<HTMLButtonElement, MouseEvent>)(evt);
-      }}
-    >
-      <Center class={styles.Container}>
-        <span class={content()}>{children}</span>
+    <Card class={klass} above={isAbove}>
+      <Center class={styles.Full}>
+        <button
+          class={styles.Full}
+          onClick={(evt) => {
+            // evt.stopPropagation();
+            setIsAbove((v) => !v);
+            (onClick as JSX.EventHandler<HTMLButtonElement, MouseEvent>)(evt);
+          }}
+        >
+          {children}
+        </button>
       </Center>
-      <span class={topCorner()}></span>
-      <span class={bottonCorner()}></span>
-    </button>
+    </Card>
   );
+  // return (
+  //   <button
+  //     type="button"
+  //     class={`${buttonBorder()} ${klass}`}
+  //     onClick={(evt) => {
+  // setPressedDown((v) => !v);
+  // (onClick as JSX.EventHandler<HTMLButtonElement, MouseEvent>)(evt);
+  //     }}
+  //   >
+  //     <Center class={styles.Container}>
+  //       <span class={content()}>{children}</span>
+  //     </Center>
+  //     <span class={topCorner()}></span>
+  //     <span class={bottonCorner()}></span>
+  //   </button>
+  // );
 };

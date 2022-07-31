@@ -1,0 +1,95 @@
+body {
+  --boder-size: 6;
+  --pixel-size: calc(1rem / 16);
+  --border-width: var(--pixel-size);
+  --border-radius-md: calc(var(--pixel-size) * var(--boder-size));
+  --inner-size: calc(100% - 2 * var(--pixel-size));
+  --inner-border-radius: calc(var(--border-radius-md) - var(--border-width));
+}
+
+.BaseCard {
+  @apply flex relative;
+  border-radius: var(--border-radius-md);
+  border-width: var(--pixel-size);
+}
+
+.FlatCard {
+  @apply BaseCard border-app-gray-175;
+}
+
+.AboveCardBorder {
+  @apply BaseCard;
+  @apply border-l-app-gray-255 border-r-app-gray-175;
+  @apply border-t-app-gray-255  border-b-app-gray-175;
+}
+
+.BelowCardBorder {
+  @apply BaseCard;
+  @apply border-l-app-gray-175  border-r-app-gray-255;
+  @apply border-t-app-gray-175  border-b-app-gray-255;
+}
+
+.Corner {
+  border-radius: var(--border-radius-md);
+  width: var(--inner-border-radius);
+  height: var(--inner-border-radius);
+}
+
+.AboveCorner {
+  @apply Corner;
+  /* right: calc(-1 * var(--pixel-size)); */
+  /* top: calc(-1 * var(--pixel-size)); */
+  background: linear-gradient(
+    135deg,
+    var(--app-gray-255) 0%,
+    var(--app-gray-230) 50%,
+    var(--app-gray-175) 100%
+  );
+}
+
+.BelowCorner {
+  @apply Corner;
+  /* right: calc(-1 * var(--pixel-size)); */
+  /* top: calc(-1 * var(--pixel-size)); */
+  background: linear-gradient(
+    135deg,
+    var(--app-gray-175) 0%,
+    var(--app-gray-230) 50%,
+    var(--app-gray-255) 100%
+  );
+}
+
+.AboveTopRightCorner {
+  @apply absolute right-0 AboveCorner;
+}
+
+.AboveBottomLeftCorner {
+  @apply absolute bottom-0 AboveCorner;
+}
+
+.BelowTopRightCorner {
+  @apply absolute right-0 BelowCorner;
+}
+
+.BelowBottomLeftCorner {
+  @apply absolute bottom-0 BelowCorner;
+}
+
+.Container {
+  @apply h-full w-full;
+}
+
+.Content {
+  @apply z-10;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--inner-border-radius);
+}
+
+.AboveContent {
+  @apply bg-app-gray-235  BaseCard Content;
+}
+
+.BellowContent {
+  @apply bg-app-gray-225  BaseCard Content;
+}

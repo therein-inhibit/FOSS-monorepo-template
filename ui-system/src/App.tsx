@@ -4,22 +4,24 @@ import {
   // Button,
   Center,
   VStack,
-  FlatButton,
+  // FlatButton,
   // Card,
   // ButtonShallow,
   // RaisedCard,
-  Spinner,
-  Modal,
-  ShallowCard,
-  RaisedCard,
-  Text,
+  // Spinner,
+  // Modal,
+  // ShallowCard,
+  // RaisedCard,
+  // Text,
   HStack,
+  Button,
+  Card,
   // CloseButton,
 } from "ui-system";
 import { range } from "lib";
 import { Close as CloseIcon } from "ui-system/icons";
 
-import { Button } from "ui-system/elements/Button2";
+// import { Card } from "ui-system/elements/Card2";
 
 // TODO: create containers, elements, components and widget
 const App: Component = () => {
@@ -28,20 +30,30 @@ const App: Component = () => {
       <Center class="h-full w-full text-app-gray-050 p-2">
         <VStack class="gap-20 items-center mt-4">
           {/* <RaisedCard class="h-[64px] w-[192px]"> */}
-          <RaisedCard class="rounded-md">
+          {/* <RaisedCard class="rounded-md">
             <HStack class="gap-2 m-1">
               <ShallowCard class="w-16 h-fit rounded-sm">btn</ShallowCard>
-              <Center class="w-16 h-fit rounded-sm">btn 2</Center>
-              {/* <FlatButton id="AAA" class="p-2">
+              <Center class="w-16 h-fit rounded-sm">btn 2</Center> */}
+          {/* <FlatButton id="AAA" class="p-2">
                 <Center class="w-16">Flat</Center>
               </FlatButton>
               <FlatButton id="AAA" class="p-2">
                 <Center class="w-16">Flat 2</Center>
               </FlatButton> */}
-            </HStack>
-          </RaisedCard>
+          {/* </HStack>
+          </RaisedCard> */}
           <HStack class="gap-4">
-            <Button class="w-64 h-32" />
+            <Button
+              class="w-32 h-32"
+              onClick={(evt) => {
+                console.log("BBB", evt);
+              }}
+            >
+              Click
+            </Button>
+            <Card class="w-32 h-32">
+              <Center class="w-full h-full">Card</Center>
+            </Card>
             {/* <ShallowCard class="h-32 w-32" shallow />
             <ShallowCard class="h-32 w-32" />
 
@@ -103,22 +115,10 @@ const App: Component = () => {
         </VStack>
       </Center>
 
-      <Modal
+      {/* <Modal
         class="h-[32rem] w-[32rem]"
         body={
           <VStack>
-            {/* <CloseButton
-              onClick={() => {
-                let [_, set] = Modal.signal;
-                set(false);
-              }}
-            /> */}
-            {/* <button
-            class=" absolute right-0 rounded-full"
-
-          >
-            <CloseIcon />
-          </button> */}
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -166,10 +166,8 @@ const App: Component = () => {
           </VStack>
         }
       >
-        {/* <Center class="h-full w-full">
-          <Spinner />
-        </Center> */}
-      </Modal>
+
+      </Modal> */}
       {/* <Overlay>
         <Center class="w-full h-full">
         </Center>
