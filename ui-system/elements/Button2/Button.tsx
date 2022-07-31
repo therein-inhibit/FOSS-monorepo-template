@@ -8,6 +8,7 @@ import {
 } from "solid-js";
 
 import styles from "./Button.module.css";
+import { Center, Box } from "ui-system";
 
 type ButtonProps = JSX.ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -28,6 +29,18 @@ export const Button = ({
 }: ButtonProps): JSX.Element => {
   let [pressedDown, setPressedDown] = createSignal(false);
 
+  let topCorner = () =>
+    pressedDown() ? styles.BelowTopRightCorner : styles.AboveTopRightCorner;
+
+  let bottonCorner = () =>
+    pressedDown() ? styles.BelowBottomLeftCorner : styles.AboveBottomLeftCorner;
+
+  let buttonBorder = () =>
+    pressedDown() ? styles.BelowButtonBorder : styles.AboveButtonBorder;
+
+  let content = () =>
+    pressedDown() ? styles.BellowContent : styles.AboveContent;
+
   // must detect mouse up to clear the flat state
   // let mouseUpHandler = () => setPressedDown(false);
   // document.addEventListener("mouseup", mouseUpHandler);
@@ -39,15 +52,17 @@ export const Button = ({
   return (
     <button
       type="button"
-      class={`${
-        pressedDown() ? styles.AboveButton : styles.BelowButton
-      } ${klass}`}
+      class={`${buttonBorder()} ${klass}`}
       onClick={(evt) => {
         setPressedDown((v) => !v);
         (onClick as JSX.EventHandler<HTMLButtonElement, MouseEvent>)(evt);
       }}
     >
-      {children}
+      <Center class={styles.Container}>
+        <span class={content()}>{children}</span>
+      </Center>
+      <span class={topCorner()}></span>
+      <span class={bottonCorner()}></span>
     </button>
   );
 };
