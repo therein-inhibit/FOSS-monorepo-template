@@ -23,6 +23,7 @@ body {
 
 .Ripple {
   transition: background 2s;
+  border-radius: var(--inner-border-radius);
   @apply w-full h-full;
 }
 
@@ -72,25 +73,25 @@ body {
   );
 }
 
-.AboveTopRightCorner {
+.AboveTopRightCardCorner {
   @apply absolute right-0 AboveCardCorner;
   right: calc(-1 * var(--shade-width) * var(--pixel-size));
   top: calc(-1 * var(--shade-width) * var(--pixel-size));
 }
 
-.AboveBottomLeftCorner {
+.AboveBottomLeftCardCorner {
   @apply absolute bottom-0 AboveCardCorner;
   bottom: calc(-1 * var(--shade-width) * var(--pixel-size));
   left: calc(-1 * var(--shade-width) * var(--pixel-size));
 }
 
-.BelowTopRightCorner {
+.BelowTopRightCardCorner {
   @apply absolute right-0 BelowCardCorner;
   right: calc(-1 * var(--shade-width) * var(--pixel-size));
   top: calc(-1 * var(--shade-width) * var(--pixel-size));
 }
 
-.BelowBottomLeftCorner {
+.BelowBottomLeftCardCorner {
   @apply absolute bottom-0 BelowCardCorner;
   bottom: calc(-1 * var(--shade-width) * var(--pixel-size));
   left: calc(-1 * var(--shade-width) * var(--pixel-size));
@@ -106,10 +107,10 @@ body {
   border-radius: var(--inner-border-radius);
 }
 
-.AboveContent {
+.CardContentAbove {
   @apply bg-app-gray-235  BaseCard Content;
 }
 
-.BellowContent {
+.CardContentBelow {
   @apply bg-app-gray-225  BaseCard Content;
 }

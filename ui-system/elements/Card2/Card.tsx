@@ -7,7 +7,19 @@ import {
   onCleanup,
 } from "solid-js";
 
-import styles from "./Card.module.css";
+import {
+  FlatCard,
+  AboveTopRightCardCorner,
+  BelowTopRightCardCorner,
+  AboveBottomLeftCardCorner,
+  BelowBottomLeftCardCorner,
+  AboveCardBorder,
+  BelowCardBorder,
+  CardContentAbove,
+  CardContentBelow,
+  Ripple,
+  Container,
+} from "./Card.module.css";
 import { Center, Box } from "ui-system";
 
 type ButtonProps = JSX.ButtonHTMLAttributes<HTMLDivElement> & {
@@ -32,31 +44,23 @@ export const Card = ({
 }: ButtonProps): JSX.Element => {
   let topCorner = () =>
     above() === null
-      ? styles.FlatCard
+      ? ""
       : above()
-      ? styles.AboveTopRightCorner
-      : styles.BelowTopRightCorner;
+      ? AboveTopRightCardCorner
+      : BelowTopRightCardCorner;
 
   let bottomCorner = () =>
     above() === null
-      ? styles.FlatCard
+      ? ""
       : above()
-      ? styles.AboveBottomLeftCorner
-      : styles.BelowBottomLeftCorner;
+      ? AboveBottomLeftCardCorner
+      : BelowBottomLeftCardCorner;
 
   let cardBorder = () =>
-    above() === null
-      ? styles.FlatCard
-      : above()
-      ? styles.AboveCardBorder
-      : styles.BelowCardBorder;
+    above() === null ? FlatCard : above() ? AboveCardBorder : BelowCardBorder;
 
   let content = () =>
-    above() === null
-      ? styles.FlatCard
-      : above()
-      ? styles.AboveContent
-      : styles.BellowContent;
+    above() === null ? "" : above() ? CardContentAbove : CardContentBelow;
 
   // must detect mouse up to clear the flat state
   // let mouseUpHandler = () => setPressedDown(false);
@@ -75,10 +79,10 @@ export const Card = ({
       }}
     >
       {above() === null ? (
-        <span class={` ${styles.Ripple}`}>{children}</span>
+        <span class={` ${Ripple}`}>{children}</span>
       ) : (
         <>
-          <Center class={styles.Container}>
+          <Center class={Container}>
             <span class={content()}>{children}</span>
           </Center>
           <span class={topCorner()}></span>
